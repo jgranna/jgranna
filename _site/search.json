@@ -7,13 +7,6 @@
     "text": "I am a university assistant and PhD candidate at the Department of Statistics, University of Innsbruck, Austria. My research interests include mainly the modeling of real estate prices including the computation of hedonic indices utilizing mainly Generalized Additive Models and Tree-Based Methods. I am however interested in other methods of Statistical and Machine Learning."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "index.html#education",
     "href": "index.html#education",
     "title": "Julian Granna",
@@ -47,6 +40,13 @@
     "title": "Scooby Doo Episodes",
     "section": "References",
     "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\ntm-package:\nhttps://tm.r-forge.r-project.org\nwordcloud2-package:\nhttps://github.com/Lchiffon/wordcloud2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
   },
   {
     "objectID": "rprojects.html",
