@@ -18,7 +18,7 @@ projects: []
 ---
   
   
-  ```{r setup, include=FALSE, cache = TRUE}
+```{r setup, include=FALSE, cache = TRUE}
 holiday <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-07-06/holidays.csv")
 ```
 
