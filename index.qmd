@@ -1,5 +1,5 @@
 ---
-title: "Julian Granna"
+title: "Julian Granna, MSc."
 about: 
   template: jolla
   image: avatar.jpg

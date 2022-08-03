@@ -5,11 +5,12 @@ website:
   logo: icon.png
   title: "Julian Granna"
   navbar:
+    logo: icon.png
     left:
-      - href: index.qmd
-        text: About
       - href: rprojects.qmd
         text: R Projects
+      - href: research.qmd
+        text: Research and Teaching
 
 format:
   html:

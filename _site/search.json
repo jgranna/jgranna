@@ -2,21 +2,21 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Julian Granna",
+    "title": "Julian Granna, MSc.",
     "section": "",
     "text": "I am a university assistant and PhD candidate at the Department of Statistics, University of Innsbruck, Austria. My research interests include mainly the modeling of real estate prices including the computation of hedonic indices utilizing mainly Generalized Additive Models and Tree-Based Methods. I am however interested in other methods of Statistical and Machine Learning."
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
-    "title": "Julian Granna",
+    "title": "Julian Granna, MSc.",
     "section": "Education",
     "text": "Education\nUniversity of Innsbruck | Innsbruck, AT\nPhD in Economics and Statistics\nSept 2019 - ongoing\nUniversity of Innsbruck | Innsbruck, AT\nMSc in Economics\nOct 2015 - May 2019\nUniversity of Hanover | Hanover, DE\nBSc in Economics and Business Administration\nOct 2011 - May 2015"
   },
   {
     "objectID": "index.html#experience",
     "href": "index.html#experience",
-    "title": "Julian Granna",
+    "title": "Julian Granna, MSc.",
     "section": "Experience",
     "text": "Experience\nUniversity Assistant (PhD candidate)\nUniversity of Innsbruck\nSep 2019 – Present\nResearch Platform coordinator\nUniversity of Innsbruck\nJul 2017 – Mar 2019\nHomepage design and maintenance, organization of seminars, maintenance of working paper series, among others.\nExternal lecturer\nUniversity of Innsbruck\nMar 2017 – Jul 2018\nExternal lecturer in Statistical Data Analysis (Undergraduate level)."
   },
@@ -299,5 +299,40 @@
     "title": "R Projects",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\nDevelopment of Chinook Salmon and Yellow Perch populations in the Great Lakes\n\n\n\n\n\n\n\n\n\nJun 8, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 18, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 4, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 27, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 21, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Granna, Brunauer, Lang, 2022. Proposing a global model to overcome the bias-variance tradeoff in the context of hedonic house price models. ERES Conference 2022, Milano, Italy.\nGranna, Brunauer, Lang, 2021. Reducing bias of hedonic house price indices. ERES Conference 2021, Kaiserslautern, Germany.\nGranna, 2019. Comparing hedonic house price indices. Master thesis."
+  },
+  {
+    "objectID": "research.html#teaching",
+    "href": "research.html#teaching",
+    "title": "Research",
+    "section": "Teaching",
+    "text": "Teaching\n\nPS Statistical Data Analysis (undergraduate level)."
+  },
+  {
+    "objectID": "research.html#co-advising-and-contributions-to-theses",
+    "href": "research.html#co-advising-and-contributions-to-theses",
+    "title": "Research",
+    "section": "(Co-)Advising and contributions to theses",
+    "text": "(Co-)Advising and contributions to theses\n\nLoos, 2022. Modellierung von Kaufpreisen von Wohnungen in Sachsen in Abhängigkeit von Charakteristika und Lagevariablen. Bachelor thesis.\nWetscher, 2021. Cluster analysis of Berlin rental prices. Master thesis."
+  },
+  {
+    "objectID": "research.html#talks-research-stays-workshops",
+    "href": "research.html#talks-research-stays-workshops",
+    "title": "Research",
+    "section": "Talks, Research Stays & Workshops",
+    "text": "Talks, Research Stays & Workshops\n\nJuly 2022 : “Deep Learning” Summer School at Tinbergen Institute, Amsterdam, Netherlands.\n4 March 2022: PhD seminar series, joint program of JKU Linz and University of Innsbruck.\nAugust - September 2021 : Student Exchange at Institute of Agricultural Economics Virginia Tech, USA."
+  },
+  {
+    "objectID": "research.html#scholarships",
+    "href": "research.html#scholarships",
+    "title": "Research",
+    "section": "Scholarships",
+    "text": "Scholarships\n\n2022: Stipendium für Kurzfristige Wissenschaftliche Aufenthalte im Ausland (KWA), 2400 Euro."
   }
 ]

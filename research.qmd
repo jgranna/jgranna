@@ -1,0 +1,33 @@
+---
+title: "Research"
+---
+
+## Publications and Conferences.
+
+-   Granna, Brunauer, Lang, 2022. Proposing a global model to overcome the bias-variance tradeoff in the context of hedonic house price models. [*ERES Conference 2022*](https://2022.eres.org/i)*, Milano, Italy.*
+
+-   Granna, Brunauer, Lang, 2021. Reducing bias of hedonic house price indices. *ERES Conference 2021, Kaiserslautern, Germany.*
+
+-   Granna, 2019. Comparing hedonic house price indices. *Master thesis.*
+
+## Teaching
+
+-   PS Statistical Data Analysis (undergraduate level).
+
+## (Co-)Advising and contributions to theses
+
+-   Loos, 2022. Modellierung von Kaufpreisen von Wohnungen in Sachsen in Abhängigkeit von Charakteristika und Lagevariablen. *Bachelor thesis.*
+
+-   Wetscher, 2021. [Cluster analysis of Berlin rental prices](https://diglib.uibk.ac.at/ulbtirolhslimit/content/titleinfo/5848318). Master thesis.
+
+## Talks, Research Stays & Workshops
+
+-   July 2022 : "Deep Learning" Summer School at Tinbergen Institute, Amsterdam, Netherlands.
+
+-   4 March 2022: PhD seminar series, joint program of JKU Linz and University of Innsbruck.
+
+-   August - September 2021 : Student Exchange at Institute of Agricultural Economics Virginia Tech, USA.
+
+## Scholarships
+
+-   2022: Stipendium für Kurzfristige Wissenschaftliche Aufenthalte im Ausland (KWA), 2400 Euro.
