@@ -1,0 +1,102 @@
+---
+title: Scooby Doo Episodes
+author: Julian Granna
+date: '2021-07-13'
+slug: scooby-doo-episodes
+categories: []
+tags:
+  - wordcloud2
+  - tm
+  - cartoon
+  - tv
+subtitle: ''
+summary: ''
+lastmod: '2021-07-16T14:00:39+02:00'
+featured: no
+image: scooby-doo.png
+projects: []
+---
+
+
+```{r setup, include=FALSE, cache = TRUE}
+data <- tidytuesdayR::tt_load("2021-07-13")
+```
+
+## Tidy Tuesday
+
+This is my nineth contribution to TidyTuesday, which is 'a weekly podcast and community activity brought to you by the R4DS Online Learning Community'. Their goal is to help R learners learn in real-world contexts. 
+
+For more information, visit the [TidyTuesday homepage](https://www.tidytuesday.com/), check out their [GitHub repository](https://github.com/rfordatascience/tidytuesday) and follow the [R4DS Learning Community on Twitter](https://twitter.com/R4DScommunity).
+
+The purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom.
+
+```{r, include=FALSE}
+library(colorspace)
+library(wordcloud2)
+library(tm)
+#knitr::opts_chunk$set(fig.width=4, fig.height=2.5) 
+scooby <- data$scoobydoo
+```
+
+## Scooby Doo Episodes
+
+This week's data comes from [Kaggle](https://www.kaggle.com/williamschooleman/scoobydoo-complete) and was aggregated by [plummye](https://www.kaggle.com/williamschooleman). It contains the dates of countries when they declared independence.
+
+### Word Cloud for Episode Titles
+
+The dataset is very large and one could spend a lot of time investigating it. I am interested in which words are used frequently in the episodes' titles. To investigate this descriptively, I plot the frequency of the words in the titles as a word cloud using the `wordcloud2`-package. To make the word cloud take the shape of scooby, I provide a shape image containing the silhouette of Scooby, which was received [here](http://www.fun-with-pictures.com/scooby-doo-silhouette.html):
+
+```{r, eval=FALSE}
+# filter out uninteresting words and interpret "scooby's" as "scooby"
+scooby$title <- gsub("Scooby's", "scooby", scooby$title) 
+scooby$title <- gsub("and", " ", scooby$title) 
+scooby$title <- gsub("The", " ", scooby$title) 
+scooby$title <- gsub("the", " ", scooby$title) 
+scooby$title <- gsub("for", " ", scooby$title) 
+scooby$title <- gsub("from", " ", scooby$title) 
+# convert to corpus:
+docs <- Corpus(VectorSource(scooby$title))
+# Convert the text to lower case
+docs <- tm_map(docs, content_transformer(tolower))
+# Remove numbers
+docs <- tm_map(docs, removeNumbers)
+# Remove punctuations, but keep apostrophes (e.g. don't, not dont)
+docs <- tm_map(docs, removePunctuation, preserve_intra_word_contractions = TRUE)
+# Eliminate extra white spaces
+docs <- tm_map(docs, stripWhitespace)
+
+# create term document matrix
+dtm <- TermDocumentMatrix(docs)
+m <- as.matrix(dtm)
+v <- sort(rowSums(m),decreasing=TRUE)
+d <- data.frame(word = names(v),freq=v)
+# reduce frequeny, so that words fit into graphics device (not ideal!)
+d$freq[1:2] <- 30
+# use different colors
+cols <- hcl.colors(982, palette = "Green-Orange")
+set.seed(17721)
+w <- wordcloud2(d, figPath = "https://github.com/jgranna/tidytuesday/blob/main/2021-07-13/_images/scooby.jpg", size = 1, backgroundColor="black", minSize = 1, color = cols)
+```
+
+![Scooby Doo](https://raw.githubusercontent.com/jgranna/tidytuesday/main/2021-07-13/_images/export.png)
+
+It is apparent, that "scoobydoo" is used frequently in the episodes' titles. But also the words "mystery", "night", "ghost", etc. occur quite often.  
+
+One could spend much more time to improve the image. Also, the plotting only worked for me in the browser and thus I could not export the image in a "nice way", but had to export it manually from the browser, which is of course not ideal. 
+
+--------------------------------------------------
+
+Full R code available on [Github](https://github.com/jgranna/tidytuesday/tree/main/2021-07-13).
+
+--------------------------------------------------
+
+## References
+
+- `colorspace`**-package**:  
+<https://colorspace.r-forge.r-project.org/index.html>
+
+- `tm`**-package**:  
+<https://tm.r-forge.r-project.org>
+
+- `wordcloud2`**-package**:  
+<https://github.com/Lchiffon/wordcloud2>

@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Julian Granna",
+    "section": "",
+    "text": "I am a university assistant and PhD candidate at the Department of Statistics, University of Innsbruck, Austria. My research interests include mainly the modeling of real estate prices including the computation of hedonic indices utilizing mainly Generalized Additive Models and Tree-Based Methods. I am however interested in other methods of Statistical and Machine Learning."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Julian Granna",
+    "section": "Education",
+    "text": "Education\nUniversity of Innsbruck | Innsbruck, AT\nPhD in Economics and Statistics\nSept 2019 - ongoing\nUniversity of Innsbruck | Innsbruck, AT\nMSc in Economics\nOct 2015 - May 2019\nUniversity of Hanover | Hanover, DE\nBSc in Economics and Business Administration\nOct 2011 - May 2015"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Julian Granna",
+    "section": "Experience",
+    "text": "Experience\nUniversity Assistant (PhD candidate)\nUniversity of Innsbruck\nSep 2019 – Present\nResearch Platform coordinator\nUniversity of Innsbruck\nJul 2017 – Mar 2019\nHomepage design and maintenance, organization of seminars, maintenance of working paper series, among others.\nExternal lecturer\nUniversity of Innsbruck\nMar 2017 – Jul 2018\nExternal lecturer in Statistical Data Analysis (Undergraduate level)."
+  },
+  {
+    "objectID": "posts/scooby-doo.html",
+    "href": "posts/scooby-doo.html",
+    "title": "Scooby Doo Episodes",
+    "section": "",
+    "text": "This is my nineth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+  },
+  {
+    "objectID": "posts/scooby-doo.html#scooby-doo-episodes",
+    "href": "posts/scooby-doo.html#scooby-doo-episodes",
+    "title": "Scooby Doo Episodes",
+    "section": "Scooby Doo Episodes",
+    "text": "Scooby Doo Episodes\nThis week’s data comes from Kaggle and was aggregated by plummye. It contains the dates of countries when they declared independence.\n\nWord Cloud for Episode Titles\nThe dataset is very large and one could spend a lot of time investigating it. I am interested in which words are used frequently in the episodes’ titles. To investigate this descriptively, I plot the frequency of the words in the titles as a word cloud using the wordcloud2-package. To make the word cloud take the shape of scooby, I provide a shape image containing the silhouette of Scooby, which was received here:\n\n# filter out uninteresting words and interpret \"scooby's\" as \"scooby\"\nscooby$title <- gsub(\"Scooby's\", \"scooby\", scooby$title) \nscooby$title <- gsub(\"and\", \" \", scooby$title) \nscooby$title <- gsub(\"The\", \" \", scooby$title) \nscooby$title <- gsub(\"the\", \" \", scooby$title) \nscooby$title <- gsub(\"for\", \" \", scooby$title) \nscooby$title <- gsub(\"from\", \" \", scooby$title) \n# convert to corpus:\ndocs <- Corpus(VectorSource(scooby$title))\n# Convert the text to lower case\ndocs <- tm_map(docs, content_transformer(tolower))\n# Remove numbers\ndocs <- tm_map(docs, removeNumbers)\n# Remove punctuations, but keep apostrophes (e.g. don't, not dont)\ndocs <- tm_map(docs, removePunctuation, preserve_intra_word_contractions = TRUE)\n# Eliminate extra white spaces\ndocs <- tm_map(docs, stripWhitespace)\n\n# create term document matrix\ndtm <- TermDocumentMatrix(docs)\nm <- as.matrix(dtm)\nv <- sort(rowSums(m),decreasing=TRUE)\nd <- data.frame(word = names(v),freq=v)\n# reduce frequeny, so that words fit into graphics device (not ideal!)\nd$freq[1:2] <- 30\n# use different colors\ncols <- hcl.colors(982, palette = \"Green-Orange\")\nset.seed(17721)\nw <- wordcloud2(d, figPath = \"https://github.com/jgranna/tidytuesday/blob/main/2021-07-13/_images/scooby.jpg\", size = 1, backgroundColor=\"black\", minSize = 1, color = cols)\n\n\n\n\nScooby Doo\n\n\nIt is apparent, that “scoobydoo” is used frequently in the episodes’ titles. But also the words “mystery”, “night”, “ghost”, etc. occur quite often.\nOne could spend much more time to improve the image. Also, the plotting only worked for me in the browser and thus I could not export the image in a “nice way”, but had to export it manually from the browser, which is of course not ideal.\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "posts/scooby-doo.html#references",
+    "href": "posts/scooby-doo.html#references",
+    "title": "Scooby Doo Episodes",
+    "section": "References",
+    "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\ntm-package:\nhttps://tm.r-forge.r-project.org\nwordcloud2-package:\nhttps://github.com/Lchiffon/wordcloud2"
+  },
+  {
+    "objectID": "rprojects.html",
+    "href": "rprojects.html",
+    "title": "R Projects",
+    "section": "",
+    "text": "Jul 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\nNo matching items"
+  }
+]

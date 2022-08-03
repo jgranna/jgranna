@@ -1,0 +1,52 @@
+---
+title: "Julian Granna"
+about: 
+  template: jolla
+  image: avatar.jpg
+  links: 
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/jugRanna
+    - icon: github
+      text: github
+      href: https://github.com/jgranna
+    - icon: envelope
+      text: email
+      href: mailto:julian.granna[at]posteo.de
+---
+
+I am a university assistant and PhD candidate at the Department of Statistics, University of Innsbruck, Austria. My research interests include mainly the modeling of real estate prices including the computation of hedonic indices utilizing mainly Generalized Additive Models and Tree-Based Methods. I am however interested in other methods of Statistical and Machine Learning.
+
+------------------------------------------------------------------------
+
+## Education
+
+University of Innsbruck \| Innsbruck, AT\
+**PhD in Economics and Statistics**\
+Sept 2019 - ongoing
+
+University of Innsbruck \| Innsbruck, AT\
+**MSc in Economics**\
+Oct 2015 - May 2019
+
+University of Hanover \| Hanover, DE\
+**BSc in Economics and Business Administration**\
+Oct 2011 - May 2015
+
+------------------------------------------------------------------------
+
+## Experience
+
+**University Assistant (PhD candidate)**\
+University of Innsbruck\
+Sep 2019 -- Present
+
+**Research Platform coordinator**\
+University of Innsbruck\
+Jul 2017 -- Mar 2019\
+*Homepage design and maintenance, organization of seminars, maintenance of working paper series, among others.*
+
+**External lecturer**\
+University of Innsbruck\
+Mar 2017 -- Jul 2018\
+*External lecturer in Statistical Data Analysis (Undergraduate level).*

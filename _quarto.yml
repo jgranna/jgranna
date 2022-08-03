@@ -1,0 +1,22 @@
+project:
+  type: website
+
+website:
+  title: "Julian Granna"
+  navbar:
+    left:
+      - href: index.qmd
+        text: About
+      - href: rprojects.qmd
+        text: R Projects
+
+format:
+  html:
+    theme: 
+      light: [quartz, custom.scss]
+      dark: cyborg
+    css: styles.css
+    toc: true
+
+editor: visual
+
