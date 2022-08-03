@@ -2,6 +2,7 @@ project:
   type: website
 
 website:
+  logo: icon.png
   title: "Julian Granna"
   navbar:
     left:
