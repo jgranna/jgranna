@@ -1,6 +1,12 @@
 ---
 title: "R Projects"
 listing: 
+  page-size: 5
+  sort-ui: [title, date]
+  filter-ui: [title, date]
   contents: posts
+  type: default
+  sort:
+    - "date desc"
+    - "title desc"
 ---
-

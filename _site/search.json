@@ -21,69 +21,6 @@
     "text": "Experience\nUniversity Assistant (PhD candidate)\nUniversity of Innsbruck\nSep 2019 – Present\nResearch Platform coordinator\nUniversity of Innsbruck\nJul 2017 – Mar 2019\nHomepage design and maintenance, organization of seminars, maintenance of working paper series, among others.\nExternal lecturer\nUniversity of Innsbruck\nMar 2017 – Jul 2018\nExternal lecturer in Statistical Data Analysis (Undergraduate level)."
   },
   {
-    "objectID": "posts/scooby-doo.html",
-    "href": "posts/scooby-doo.html",
-    "title": "Scooby Doo Episodes",
-    "section": "",
-    "text": "This is my nineth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
-  },
-  {
-    "objectID": "posts/scooby-doo.html#scooby-doo-episodes",
-    "href": "posts/scooby-doo.html#scooby-doo-episodes",
-    "title": "Scooby Doo Episodes",
-    "section": "Scooby Doo Episodes",
-    "text": "Scooby Doo Episodes\nThis week’s data comes from Kaggle and was aggregated by plummye. It contains the dates of countries when they declared independence.\n\nWord Cloud for Episode Titles\nThe dataset is very large and one could spend a lot of time investigating it. I am interested in which words are used frequently in the episodes’ titles. To investigate this descriptively, I plot the frequency of the words in the titles as a word cloud using the wordcloud2-package. To make the word cloud take the shape of scooby, I provide a shape image containing the silhouette of Scooby, which was received here:\n\n# filter out uninteresting words and interpret \"scooby's\" as \"scooby\"\nscooby$title <- gsub(\"Scooby's\", \"scooby\", scooby$title) \nscooby$title <- gsub(\"and\", \" \", scooby$title) \nscooby$title <- gsub(\"The\", \" \", scooby$title) \nscooby$title <- gsub(\"the\", \" \", scooby$title) \nscooby$title <- gsub(\"for\", \" \", scooby$title) \nscooby$title <- gsub(\"from\", \" \", scooby$title) \n# convert to corpus:\ndocs <- Corpus(VectorSource(scooby$title))\n# Convert the text to lower case\ndocs <- tm_map(docs, content_transformer(tolower))\n# Remove numbers\ndocs <- tm_map(docs, removeNumbers)\n# Remove punctuations, but keep apostrophes (e.g. don't, not dont)\ndocs <- tm_map(docs, removePunctuation, preserve_intra_word_contractions = TRUE)\n# Eliminate extra white spaces\ndocs <- tm_map(docs, stripWhitespace)\n\n# create term document matrix\ndtm <- TermDocumentMatrix(docs)\nm <- as.matrix(dtm)\nv <- sort(rowSums(m),decreasing=TRUE)\nd <- data.frame(word = names(v),freq=v)\n# reduce frequeny, so that words fit into graphics device (not ideal!)\nd$freq[1:2] <- 30\n# use different colors\ncols <- hcl.colors(982, palette = \"Green-Orange\")\nset.seed(17721)\nw <- wordcloud2(d, figPath = \"https://github.com/jgranna/tidytuesday/blob/main/2021-07-13/_images/scooby.jpg\", size = 1, backgroundColor=\"black\", minSize = 1, color = cols)\n\n\n\n\nScooby Doo\n\n\nIt is apparent, that “scoobydoo” is used frequently in the episodes’ titles. But also the words “mystery”, “night”, “ghost”, etc. occur quite often.\nOne could spend much more time to improve the image. Also, the plotting only worked for me in the browser and thus I could not export the image in a “nice way”, but had to export it manually from the browser, which is of course not ideal.\n\nFull R code available on Github."
-  },
-  {
-    "objectID": "posts/scooby-doo.html#references",
-    "href": "posts/scooby-doo.html#references",
-    "title": "Scooby Doo Episodes",
-    "section": "References",
-    "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\ntm-package:\nhttps://tm.r-forge.r-project.org\nwordcloud2-package:\nhttps://github.com/Lchiffon/wordcloud2"
-  },
-  {
-    "objectID": "posts/independence-workdays.html",
-    "href": "posts/independence-workdays.html",
-    "title": "Independence Weekdays",
-    "section": "",
-    "text": "This is my eighth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
-  },
-  {
-    "objectID": "posts/independence-workdays.html#independence-days",
-    "href": "posts/independence-workdays.html#independence-days",
-    "title": "Independence Weekdays",
-    "section": "Independence Days",
-    "text": "Independence Days\nThis week’s data comes from Wikipedia and was gathered by Isabella Velasquez. It contains the dates of countries when they declared independence.\n\nDay of the week\nI plot the independence days depending on the day of the week as a bar plot:\n\n\n\n\n\nIt is quite (or little?) surprising that there appears to be a pattern for the weekdays of independence declarations: Work days appear generally less “busy” than Friday and Saturday, but there are clearly less independence declarations on Sundays."
-  },
-  {
-    "objectID": "posts/independence-workdays.html#distribution-over-countries",
-    "href": "posts/independence-workdays.html#distribution-over-countries",
-    "title": "Independence Weekdays",
-    "section": "Distribution over countries",
-    "text": "Distribution over countries\nThen, I plot the day of the week over the different countries. This time, I want to try the mapsf-package:\n\n\n\n\n\nOver the countries, there does not appear to be a particular pattern regarding which weekday differing countries prefer to declare independence. Just a side note: I prefer using the sf-package over the mapsf package as its usage is more oriented at the usage of ggplot / tidyr.\n\nFull R code available on Github."
-  },
-  {
-    "objectID": "posts/independence-workdays.html#references",
-    "href": "posts/independence-workdays.html#references",
-    "title": "Independence Weekdays",
-    "section": "References",
-    "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\nggtext-package:\nhttps://wilkelab.org/ggtext/\nmapsf-package:\nhttps://riatelab.github.io/mapsf/index.html\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "rprojects.html",
-    "href": "rprojects.html",
-    "title": "R Projects",
-    "section": "",
-    "text": "Apr 27, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\nDevelopment of Chinook Salmon and Yellow Perch populations in the Great Lakes\n\n\n\n\n\n\n\n\n\nJun 8, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 18, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 21, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 4, 2021\n\n\nJulian Granna\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/commercial-fishing.html",
     "href": "posts/commercial-fishing.html",
     "title": "Commercial Fishing",
@@ -103,6 +40,27 @@
     "title": "Commercial Fishing",
     "section": "References",
     "text": "References\n\nggtext-package:\nhttps://wilkelab.org/ggtext/\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/"
+  },
+  {
+    "objectID": "posts/scooby-doo.html",
+    "href": "posts/scooby-doo.html",
+    "title": "Scooby Doo Episodes",
+    "section": "",
+    "text": "This is my nineth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+  },
+  {
+    "objectID": "posts/scooby-doo.html#scooby-doo-episodes",
+    "href": "posts/scooby-doo.html#scooby-doo-episodes",
+    "title": "Scooby Doo Episodes",
+    "section": "Scooby Doo Episodes",
+    "text": "Scooby Doo Episodes\nThis week’s data comes from Kaggle and was aggregated by plummye. It contains the dates of countries when they declared independence.\n\nWord Cloud for Episode Titles\nThe dataset is very large and one could spend a lot of time investigating it. I am interested in which words are used frequently in the episodes’ titles. To investigate this descriptively, I plot the frequency of the words in the titles as a word cloud using the wordcloud2-package. To make the word cloud take the shape of scooby, I provide a shape image containing the silhouette of Scooby, which was received here:\n\n# filter out uninteresting words and interpret \"scooby's\" as \"scooby\"\nscooby$title <- gsub(\"Scooby's\", \"scooby\", scooby$title) \nscooby$title <- gsub(\"and\", \" \", scooby$title) \nscooby$title <- gsub(\"The\", \" \", scooby$title) \nscooby$title <- gsub(\"the\", \" \", scooby$title) \nscooby$title <- gsub(\"for\", \" \", scooby$title) \nscooby$title <- gsub(\"from\", \" \", scooby$title) \n# convert to corpus:\ndocs <- Corpus(VectorSource(scooby$title))\n# Convert the text to lower case\ndocs <- tm_map(docs, content_transformer(tolower))\n# Remove numbers\ndocs <- tm_map(docs, removeNumbers)\n# Remove punctuations, but keep apostrophes (e.g. don't, not dont)\ndocs <- tm_map(docs, removePunctuation, preserve_intra_word_contractions = TRUE)\n# Eliminate extra white spaces\ndocs <- tm_map(docs, stripWhitespace)\n\n# create term document matrix\ndtm <- TermDocumentMatrix(docs)\nm <- as.matrix(dtm)\nv <- sort(rowSums(m),decreasing=TRUE)\nd <- data.frame(word = names(v),freq=v)\n# reduce frequeny, so that words fit into graphics device (not ideal!)\nd$freq[1:2] <- 30\n# use different colors\ncols <- hcl.colors(982, palette = \"Green-Orange\")\nset.seed(17721)\nw <- wordcloud2(d, figPath = \"https://github.com/jgranna/tidytuesday/blob/main/2021-07-13/_images/scooby.jpg\", size = 1, backgroundColor=\"black\", minSize = 1, color = cols)\n\n\n\n\nScooby Doo\n\n\nIt is apparent, that “scoobydoo” is used frequently in the episodes’ titles. But also the words “mystery”, “night”, “ghost”, etc. occur quite often.\nOne could spend much more time to improve the image. Also, the plotting only worked for me in the browser and thus I could not export the image in a “nice way”, but had to export it manually from the browser, which is of course not ideal.\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "posts/scooby-doo.html#references",
+    "href": "posts/scooby-doo.html#references",
+    "title": "Scooby Doo Episodes",
+    "section": "References",
+    "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\ntm-package:\nhttps://tm.r-forge.r-project.org\nwordcloud2-package:\nhttps://github.com/Lchiffon/wordcloud2"
   },
   {
     "objectID": "posts/canadian_heatwave.html",
@@ -130,70 +88,49 @@
     "href": "posts/canadian_heatwave.html#combine-both-graphs",
     "title": "Canadian Heatwave",
     "section": "Combine both graphs",
-    "text": "Combine both graphs\nFinally, for a better overview (and practice), I combine both plots using the patchwork- package:\n\nlibrary(patchwork)\np + theme(legend.position = \"none\") + p2 + theme(axis.text.y = element_text(margin = margin(0,6,0,4)), axis.title.y = element_blank()) + scale_y_continuous(position = \"right\") +\n  plot_layout(guides = \"collect\") +\n  plot_annotation(\n    caption = \"**Data:** NOAA | **Visualization:** @jgranna\",\n    subtitle = \"The left plot shows a scatter plot of maximum temperatures in Portland. The right plot gives the corresponding GAM smooths which makes it easier to visually identify a time trend in the data.\", \n    title = \"**Daily Maximum Temperatures in Portland, 1939 - 2021**\"\n  ) &\n  theme(plot.caption = element_markdown(margin = margin(0,3,0,0))) \n\n\n\n\n\nFull R code available on Github.\n\n## Used Packages\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/articles/colorspace.html\nggtext-package:\nhttps://wilkelab.org/ggtext/\npatchwork-package:\nhttps://patchwork.data-imaginist.com/index.html\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/"
+    "text": "Combine both graphs\nFinally, for a better overview (and practice), I combine both plots using the patchwork- package:\n\nlibrary(patchwork)\np + theme(legend.position = \"none\") + p2 + theme(axis.text.y = element_text(margin = margin(0,6,0,4)), axis.title.y = element_blank()) + scale_y_continuous(position = \"right\") +\n  plot_layout(guides = \"collect\") +\n  plot_annotation(\n    caption = \"**Data:** NOAA | **Visualization:** @jgranna\",\n    subtitle = \"The left plot shows a scatter plot of maximum temperatures in Portland. The right plot gives the corresponding GAM smooths which makes it easier to visually identify a time trend in the data.\", \n    title = \"**Daily Maximum Temperatures in Portland, 1939 - 2021**\"\n  ) &\n  theme(plot.caption = element_markdown(margin = margin(0,3,0,0))) \n\n\n\n\n\nFull R code available on Github."
   },
   {
-    "objectID": "posts/super-mario.html",
-    "href": "posts/super-mario.html",
-    "title": "Super Mario Kart N64",
+    "objectID": "posts/canadian_heatwave.html#used-packages",
+    "href": "posts/canadian_heatwave.html#used-packages",
+    "title": "Canadian Heatwave",
+    "section": "Used Packages",
+    "text": "Used Packages\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/articles/colorspace.html\nggtext-package:\nhttps://wilkelab.org/ggtext/\npatchwork-package:\nhttps://patchwork.data-imaginist.com/index.html\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/"
+  },
+  {
+    "objectID": "posts/deforestation.html",
+    "href": "posts/deforestation.html",
+    "title": "Deforestation",
     "section": "",
-    "text": "This is my sixth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+    "text": "This is my first contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage or check out their GitHub repository."
   },
   {
-    "objectID": "posts/super-mario.html#super-mario-kart",
-    "href": "posts/super-mario.html#super-mario-kart",
-    "title": "Super Mario Kart N64",
-    "section": "Super Mario Kart",
-    "text": "Super Mario Kart\nThis week’s data comes from Mario Kart World Records. It contains world records for the corresponding racing game for the Nintendo 64 gaming console.\n\nConvergence of record times towards their global best\nWhen first regarding the data, I find that more interesting than the absolute record times on the tracks are the relative improvements that have been made on the tracks, and thus, how much more room for improvement there’s probably left. Again, the approach chosen by me is likely to be not the best possible, but the one I find interesting when regarding the data.\nTo obtain interpretable and comparable graphs, I restrict myself to record times that exclude shortcuts and times on PAL systems. For more information on the latter, see the link to the data above. Further, I receive the tracks’ current all-time records and divide the records by the global record to obtain a ratio:\n\n# filter time w/o shortcuts\nrecords <- records %>%\n  filter(shortcut == \"No\") %>%\n  filter(system_played == \"PAL\") %>%\n  filter(type == \"Three Lap\") %>%\n  mutate(image = \"_images/cut.png\")\n# get minimum time for each track\nmins <- aggregate(records$time ~ records$track, FUN = min)\nnames(mins) <- c(\"track\", \"time\")\n# divide time by minimum time\ntracks <- unique(records$track)\nfor (i in 1:length(unique(records$track))) {\n  records$time[records$track == tracks[i]] <- \n    records$time[records$track == tracks[i]] / mins$time[mins$track == tracks[i]]\n}\n\nThen, I plot the records on all tracks:\n\n\n\n\n\nNote: The font and colors are chosen to match the topic, not to be most suitable for interpretation.\nThe tracks in the plot above are hard to distinguish. Thus, I choose to further provide a facet wrap plot which makes the tracks’ records easier to distinguish:\n\n\n\n\n\nIt is apparant that record times on some tracks, like DK’s Jungle Parkway, Yoshi Valley, or Wario Stadium improved quite substantially, while other times only got beat by rather small relative margins. Also, for most tracks, the rate of improvement seems to decline, which is of course not surprising. However, some tracks’ records definitely seem to provide more room for improvement than others."
+    "objectID": "posts/deforestation.html#worldwide-soy-production-over-time",
+    "href": "posts/deforestation.html#worldwide-soy-production-over-time",
+    "title": "Deforestation",
+    "section": "Worldwide soy production over time",
+    "text": "Worldwide soy production over time\nStreamgraph for soy production per continent:\n\n\n\n\n\nThe global production of soy has increased rapidly over the last 60 years. Europe’s share in global production is stagnating and stable since around 1980. Growth in soy production mainly stems from production increases in Asia and South America."
   },
   {
-    "objectID": "posts/super-mario.html#references",
-    "href": "posts/super-mario.html#references",
-    "title": "Super Mario Kart N64",
-    "section": "References",
-    "text": "References\n\nggtext-package:\nhttps://wilkelab.org/ggtext/\n\npatchwork-package:\nhttps://patchwork.data-imaginist.com/articles/patchwork.html\nRokemon-package:\nhttps://github.com/schochastics/rokemon\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/\n\n\nFull R code available on Github."
+    "objectID": "posts/deforestation.html#interactive-streamgraph",
+    "href": "posts/deforestation.html#interactive-streamgraph",
+    "title": "Deforestation",
+    "section": "Interactive Streamgraph",
+    "text": "Interactive Streamgraph\nHover over graph to show cumulated soy production over all years (in million tonnes)."
   },
   {
-    "objectID": "posts/manager-salaries.html",
-    "href": "posts/manager-salaries.html",
-    "title": "Manager Salaries",
-    "section": "",
-    "text": "This is my fifth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+    "objectID": "posts/deforestation.html#brazilian-forest-loss",
+    "href": "posts/deforestation.html#brazilian-forest-loss",
+    "title": "Deforestation",
+    "section": "Brazilian Forest Loss",
+    "text": "Brazilian Forest Loss\nTo get a picture of total forest loss next to forest loss and its causes, it is useful to again regard the corresponding streamgraph:\n\n\n\n\n\nThe graph shows that total forest loss between 2001 and 2004 is much higher than in more recent years. This corresponds to evolution of forest losses in other countries with increasing development. This trend however, could (temporarily) reverse in more recent years due to less regulatory restrictions. Pasture is the major cause of forest loss in Brazil. This is true over the whole time horizon. However, the share has been decreasing in recent years. Other causes, like fire, roads, or plantations including palm oil, play a much smaller - but also substantial - role."
   },
   {
-    "objectID": "posts/manager-salaries.html#ask-a-manager-survey",
-    "href": "posts/manager-salaries.html#ask-a-manager-survey",
-    "title": "Manager Salaries",
-    "section": "Ask a Manager Survey",
-    "text": "Ask a Manager Survey\nThis week’s data comes from Ask a Manager Survey.\n\nInfluence of Experience on annual salary\nOne could expect that the more experience a manager has in the relevant field, the higher her salary will be. I thus provide a bivariate descriptive plot to gain some first insights. To see the distribution in each class in more detail, I provide violin plots.\n\n\n\n\n\nIn general, as expected, years of experience seems to be positively associated with annual salaries of managers."
-  },
-  {
-    "objectID": "posts/manager-salaries.html#references",
-    "href": "posts/manager-salaries.html#references",
-    "title": "Manager Salaries",
-    "section": "References",
-    "text": "References\n\nggtext-package:\nhttps://wilkelab.org/ggtext/\nggforce-package:\nhttps://ggforce.data-imaginist.com/\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/\n\n\nFull R code available on Github."
-  },
-  {
-    "objectID": "posts/water-sources.html",
-    "href": "posts/water-sources.html",
-    "title": "Water Sources",
-    "section": "",
-    "text": "This is my fourth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
-  },
-  {
-    "objectID": "posts/water-sources.html#water-sources",
-    "href": "posts/water-sources.html#water-sources",
-    "title": "Water Sources",
-    "section": "Water Sources",
-    "text": "Water Sources\nThis week’s data comes from Water Point Data Exchange. It is a smaller sub-dataset from the original data to include mainly African data.\n\nUsing this data and advanced GIS and machine learning analysis, several decision support tools were built. Designed in partnership with governments and data scientists, these tools provide concrete insights, like which water point to send a technician to rehabilitate next to reach the most people.\n– Katy Sill, Adam Kariv\n\n\nScatterplot of the data\nA scatterplot of the data shows the locational distribution of the observations. Arrows indicate countries with a relatively high water source density.\n\n\n\n\n\n\nType and Status of Water sources\nFurther interesting insights yields a bar plot of the types of water sources and an indicator of functionality:\n\n\n\n\nBoreholes are by far the most important source of water in the regarded countries. There is however a relatively large fraction of malfunctioning water sources as can be seen in the plot."
-  },
-  {
-    "objectID": "posts/water-sources.html#references",
-    "href": "posts/water-sources.html#references",
-    "title": "Water Sources",
-    "section": "References",
-    "text": "References\n\nggtext-package:\nhttps://wilkelab.org/ggtext/\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/\nrnaturalearth-package:\nhttps://docs.ropensci.org/rnaturalearth/\nrnaturalearthdata-package:\nhttps://docs.ropensci.org/rnaturalearthdata/\nggspatial-package:\nhttps://paleolimbot.github.io/ggspatial/\nsf-package:\nhttps://r-spatial.github.io/sf/\ndata.table-package:\nhttps://rdatatable.gitlab.io/data.table/\n\n\nFull R code available on Github."
+    "objectID": "posts/deforestation.html#share-of-global-forest-area-per-continent-over-time",
+    "href": "posts/deforestation.html#share-of-global-forest-area-per-continent-over-time",
+    "title": "Deforestation",
+    "section": "Share of global forest area per continent over time",
+    "text": "Share of global forest area per continent over time\n\n\n\nVisualize change in change of global forest share over time:\n\n\n\n\n\nThe share of each continents’ forest area of the world’s total forest area has not changed substantially over the last 30 years.\n\nFull R code available at https://github.com/jgranna/tidytuesday"
   },
   {
     "objectID": "posts/ceo-departures.html",
@@ -224,6 +161,48 @@
     "text": "References\n\nRichard J. Gentry, Joseph S. Harrison, Timothy J. Quigley, Steven Boivie, 2021. A database of CEO turnover and dismissal in S&P 1500 firms. 2000–2018, https://doi.org/10.1002/smj.3278.\nggbump-package:\nhttps://github.com/davidsjoberg/ggbump\nggtext-package:\nhttps://wilkelab.org/ggtext/\nineq-package:\nhttps://cran.r-project.org/package=ineq\npbapply-package:\nhttps://github.com/psolymos/pbapply\nshowtext-package:\nhttps://github.com/yixuan/showtext\nstringr-package:\nhttps://stringr.tidyverse.org/\ntidyverse-package:\nhttps://www.tidyverse.org/\n\n\nFull R code available on Github."
   },
   {
+    "objectID": "posts/water-sources.html",
+    "href": "posts/water-sources.html",
+    "title": "Water Sources",
+    "section": "",
+    "text": "This is my fourth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+  },
+  {
+    "objectID": "posts/water-sources.html#water-sources",
+    "href": "posts/water-sources.html#water-sources",
+    "title": "Water Sources",
+    "section": "Water Sources",
+    "text": "Water Sources\nThis week’s data comes from Water Point Data Exchange. It is a smaller sub-dataset from the original data to include mainly African data.\n\nUsing this data and advanced GIS and machine learning analysis, several decision support tools were built. Designed in partnership with governments and data scientists, these tools provide concrete insights, like which water point to send a technician to rehabilitate next to reach the most people.\n– Katy Sill, Adam Kariv\n\n\nScatterplot of the data\nA scatterplot of the data shows the locational distribution of the observations. Arrows indicate countries with a relatively high water source density.\n\n\n\n\n\n\nType and Status of Water sources\nFurther interesting insights yields a bar plot of the types of water sources and an indicator of functionality:\n\n\n\n\nBoreholes are by far the most important source of water in the regarded countries. There is however a relatively large fraction of malfunctioning water sources as can be seen in the plot."
+  },
+  {
+    "objectID": "posts/water-sources.html#references",
+    "href": "posts/water-sources.html#references",
+    "title": "Water Sources",
+    "section": "References",
+    "text": "References\n\nggtext-package:\nhttps://wilkelab.org/ggtext/\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/\nrnaturalearth-package:\nhttps://docs.ropensci.org/rnaturalearth/\nrnaturalearthdata-package:\nhttps://docs.ropensci.org/rnaturalearthdata/\nggspatial-package:\nhttps://paleolimbot.github.io/ggspatial/\nsf-package:\nhttps://r-spatial.github.io/sf/\ndata.table-package:\nhttps://rdatatable.gitlab.io/data.table/\n\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "posts/post-offices.html",
+    "href": "posts/post-offices.html",
+    "title": "US Post Offices",
+    "section": "",
+    "text": "## Tidy Tuesday\nThis is my second contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter."
+  },
+  {
+    "objectID": "posts/post-offices.html#us-post-office-data-set",
+    "href": "posts/post-offices.html#us-post-office-data-set",
+    "title": "US Post Offices",
+    "section": "US Post Office Data Set",
+    "text": "US Post Office Data Set\nThis week’s data originates from Cameron Blevins and Richard W. Helbock. It covers information on US Post Offices established between 1639 and 2000. It allows to track the development of Post Offices in the US over time.\n\nUS Post Offices Scatter\nOne could obtain a first idea about the data by regarding a scatter plot of the Post Offices over the whole time horizon:\n\n\n\n\n\nGenerally, more post offices are located in the east of the US than in the west. \\(32\\%\\) of the points are randomly located within their corresponding county, because no exact geocoding is available. Because it is more important here to illustrate the number of observations and the rough locational distribution, we do include the randomly located offices.\n\n\nNumber of established Post Offices in each state\nTo gain a further overview over the overall distribution of offices, I first regard the number of established Post Offices in each state:\n\n\n\n\n\nThe coordinates of the states’ labels would need some more fixing. It is apparent that the majority of post offices is accumulated in the coastal regions and densely populated areas.\n\n\nDensity of US Post Offices Along railroads\nRailroads played an important role in the context of expansion of colonies especially in the 19th century. The following plot demonstrates this.\n\n\n\n\n\nThe highest density of Post Offices is close to good infrastructure in terms of railroads."
+  },
+  {
+    "objectID": "posts/post-offices.html#references",
+    "href": "posts/post-offices.html#references",
+    "title": "US Post Offices",
+    "section": "References",
+    "text": "References\nMain data set:\nBlevins, Cameron; Helbock, Richard W., 2021, “US Post Offices”, https://doi.org/10.7910/DVN/NUKCNA, Harvard Dataverse, V1, UNF:6:8ROmiI5/4qA8jHrt62PpyA== [fileUNF]\nRailroad network:\nJeremy Atack, “Historical Geographic Information Systems (GIS) database of U.S. Railroads for 1848 to 1895”\n\nFull R code available at https://github.com/jgranna/tidytuesday"
+  },
+  {
     "objectID": "posts/netflix-shows.html",
     "href": "posts/netflix-shows.html",
     "title": "Netflix shows and movies",
@@ -236,5 +215,89 @@
     "title": "Netflix shows and movies",
     "section": "References",
     "text": "References\n\nData Set:\nThis week’s data set comes from kaggle.\ngggibbous-package:\nhttps://github.com/mnbram/gggibbous\ntidyverse-package:\nhttps://www.tidyverse.org/\nshowtext-package:\nhttps://github.com/yixuan/showtext\nggtext-package:\nhttps://wilkelab.org/ggtext/\nscales-package:\nhttps://scales.r-lib.org/\n\n\nFull R code available at https://github.com/jgranna/tidytuesday/tree/main/2021-04-20"
+  },
+  {
+    "objectID": "posts/super-mario.html",
+    "href": "posts/super-mario.html",
+    "title": "Super Mario Kart N64",
+    "section": "",
+    "text": "This is my sixth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+  },
+  {
+    "objectID": "posts/super-mario.html#super-mario-kart",
+    "href": "posts/super-mario.html#super-mario-kart",
+    "title": "Super Mario Kart N64",
+    "section": "Super Mario Kart",
+    "text": "Super Mario Kart\nThis week’s data comes from Mario Kart World Records. It contains world records for the corresponding racing game for the Nintendo 64 gaming console.\n\nConvergence of record times towards their global best\nWhen first regarding the data, I find that more interesting than the absolute record times on the tracks are the relative improvements that have been made on the tracks, and thus, how much more room for improvement there’s probably left. Again, the approach chosen by me is likely to be not the best possible, but the one I find interesting when regarding the data.\nTo obtain interpretable and comparable graphs, I restrict myself to record times that exclude shortcuts and times on PAL systems. For more information on the latter, see the link to the data above. Further, I receive the tracks’ current all-time records and divide the records by the global record to obtain a ratio:\n\n# filter time w/o shortcuts\nrecords <- records %>%\n  filter(shortcut == \"No\") %>%\n  filter(system_played == \"PAL\") %>%\n  filter(type == \"Three Lap\") %>%\n  mutate(image = \"_images/cut.png\")\n# get minimum time for each track\nmins <- aggregate(records$time ~ records$track, FUN = min)\nnames(mins) <- c(\"track\", \"time\")\n# divide time by minimum time\ntracks <- unique(records$track)\nfor (i in 1:length(unique(records$track))) {\n  records$time[records$track == tracks[i]] <- \n    records$time[records$track == tracks[i]] / mins$time[mins$track == tracks[i]]\n}\n\nThen, I plot the records on all tracks:\n\n\n\n\n\nNote: The font and colors are chosen to match the topic, not to be most suitable for interpretation.\nThe tracks in the plot above are hard to distinguish. Thus, I choose to further provide a facet wrap plot which makes the tracks’ records easier to distinguish:\n\n\n\n\n\nIt is apparant that record times on some tracks, like DK’s Jungle Parkway, Yoshi Valley, or Wario Stadium improved quite substantially, while other times only got beat by rather small relative margins. Also, for most tracks, the rate of improvement seems to decline, which is of course not surprising. However, some tracks’ records definitely seem to provide more room for improvement than others."
+  },
+  {
+    "objectID": "posts/super-mario.html#references",
+    "href": "posts/super-mario.html#references",
+    "title": "Super Mario Kart N64",
+    "section": "References",
+    "text": "References\n\nggtext-package:\nhttps://wilkelab.org/ggtext/\n\npatchwork-package:\nhttps://patchwork.data-imaginist.com/articles/patchwork.html\nRokemon-package:\nhttps://github.com/schochastics/rokemon\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/\n\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "posts/independence-workdays.html",
+    "href": "posts/independence-workdays.html",
+    "title": "Independence Weekdays",
+    "section": "",
+    "text": "This is my eighth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+  },
+  {
+    "objectID": "posts/independence-workdays.html#independence-days",
+    "href": "posts/independence-workdays.html#independence-days",
+    "title": "Independence Weekdays",
+    "section": "Independence Days",
+    "text": "Independence Days\nThis week’s data comes from Wikipedia and was gathered by Isabella Velasquez. It contains the dates of countries when they declared independence.\n\nDay of the week\nI plot the independence days depending on the day of the week as a bar plot:\n\n\n\n\n\nIt is quite (or little?) surprising that there appears to be a pattern for the weekdays of independence declarations: Work days appear generally less “busy” than Friday and Saturday, but there are clearly less independence declarations on Sundays."
+  },
+  {
+    "objectID": "posts/independence-workdays.html#distribution-over-countries",
+    "href": "posts/independence-workdays.html#distribution-over-countries",
+    "title": "Independence Weekdays",
+    "section": "Distribution over countries",
+    "text": "Distribution over countries\nThen, I plot the day of the week over the different countries. This time, I want to try the mapsf-package:\n\n\n\n\n\nOver the countries, there does not appear to be a particular pattern regarding which weekday differing countries prefer to declare independence. Just a side note: I prefer using the sf-package over the mapsf package as its usage is more oriented at the usage of ggplot / tidyr.\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "posts/independence-workdays.html#references",
+    "href": "posts/independence-workdays.html#references",
+    "title": "Independence Weekdays",
+    "section": "References",
+    "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\nggtext-package:\nhttps://wilkelab.org/ggtext/\nmapsf-package:\nhttps://riatelab.github.io/mapsf/index.html\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/"
+  },
+  {
+    "objectID": "posts/manager-salaries.html",
+    "href": "posts/manager-salaries.html",
+    "title": "Manager Salaries",
+    "section": "",
+    "text": "This is my fifth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+  },
+  {
+    "objectID": "posts/manager-salaries.html#ask-a-manager-survey",
+    "href": "posts/manager-salaries.html#ask-a-manager-survey",
+    "title": "Manager Salaries",
+    "section": "Ask a Manager Survey",
+    "text": "Ask a Manager Survey\nThis week’s data comes from Ask a Manager Survey.\n\nInfluence of Experience on annual salary\nOne could expect that the more experience a manager has in the relevant field, the higher her salary will be. I thus provide a bivariate descriptive plot to gain some first insights. To see the distribution in each class in more detail, I provide violin plots.\n\n\n\n\n\nIn general, as expected, years of experience seems to be positively associated with annual salaries of managers."
+  },
+  {
+    "objectID": "posts/manager-salaries.html#references",
+    "href": "posts/manager-salaries.html#references",
+    "title": "Manager Salaries",
+    "section": "References",
+    "text": "References\n\nggtext-package:\nhttps://wilkelab.org/ggtext/\nggforce-package:\nhttps://ggforce.data-imaginist.com/\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/\n\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "rprojects.html",
+    "href": "rprojects.html",
+    "title": "R Projects",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\nDevelopment of Chinook Salmon and Yellow Perch populations in the Great Lakes\n\n\n\n\n\n\n\n\n\nJun 8, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 18, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 4, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 27, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 21, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\nNo matching items"
   }
 ]

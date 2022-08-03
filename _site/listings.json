@@ -2,15 +2,17 @@
   {
     "listing": "/rprojects.html",
     "items": [
-      "/posts/ceo-departures.html",
+      "/posts/scooby-doo.html",
+      "/posts/independence-workdays.html",
       "/posts/canadian_heatwave.html",
       "/posts/commercial-fishing.html",
-      "/posts/independence-workdays.html",
-      "/posts/manager-salaries.html",
-      "/posts/netflix-shows.html",
-      "/posts/scooby-doo.html",
       "/posts/super-mario.html",
-      "/posts/water-sources.html"
+      "/posts/manager-salaries.html",
+      "/posts/water-sources.html",
+      "/posts/ceo-departures.html",
+      "/posts/netflix-shows.html",
+      "/posts/post-offices.html",
+      "/posts/deforestation.html"
     ]
   }
 ]
