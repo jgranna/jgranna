@@ -42,6 +42,34 @@
     "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\ntm-package:\nhttps://tm.r-forge.r-project.org\nwordcloud2-package:\nhttps://github.com/Lchiffon/wordcloud2"
   },
   {
+    "objectID": "posts/independence-workdays.html",
+    "href": "posts/independence-workdays.html",
+    "title": "Independence Weekdays",
+    "section": "",
+    "text": "This is my eighth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+  },
+  {
+    "objectID": "posts/independence-workdays.html#independence-days",
+    "href": "posts/independence-workdays.html#independence-days",
+    "title": "Independence Weekdays",
+    "section": "Independence Days",
+    "text": "Independence Days\nThis week’s data comes from Wikipedia and was gathered by Isabella Velasquez. It contains the dates of countries when they declared independence.\n\nDay of the week\nI plot the independence days depending on the day of the week as a bar plot:\n\n\n\n\n\nIt is quite (or little?) surprising that there appears to be a pattern for the weekdays of independence declarations: Work days appear generally less “busy” than Friday and Saturday, but there are clearly less independence declarations on Sundays."
+  },
+  {
+    "objectID": "posts/independence-workdays.html#distribution-over-countries",
+    "href": "posts/independence-workdays.html#distribution-over-countries",
+    "title": "Independence Weekdays",
+    "section": "Distribution over countries",
+    "text": "Distribution over countries\nThen, I plot the day of the week over the different countries. This time, I want to try the mapsf-package:\n\n\n\n\n\nOver the countries, there does not appear to be a particular pattern regarding which weekday differing countries prefer to declare independence. Just a side note: I prefer using the sf-package over the mapsf package as its usage is more oriented at the usage of ggplot / tidyr.\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "posts/independence-workdays.html#references",
+    "href": "posts/independence-workdays.html#references",
+    "title": "Independence Weekdays",
+    "section": "References",
+    "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\nggtext-package:\nhttps://wilkelab.org/ggtext/\nmapsf-package:\nhttps://riatelab.github.io/mapsf/index.html\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -53,6 +81,6 @@
     "href": "rprojects.html",
     "title": "R Projects",
     "section": "",
-    "text": "Jul 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\nNo matching items"
+    "text": "Jul 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\nNo matching items"
   }
 ]
