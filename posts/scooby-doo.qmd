@@ -15,6 +15,7 @@ lastmod: '2021-07-16T14:00:39+02:00'
 featured: no
 image: scooby-doo.png
 projects: []
+highlight-style: github
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}
