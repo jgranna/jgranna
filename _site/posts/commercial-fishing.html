@@ -224,6 +224,9 @@ div.csl-indent {
 
 </header>
 
+<div class="cell" data-hash="commercial-fishing_cache/html/setup_c75ea72b19821f9a1fe9b426a9679769">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2021-06-08'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="tidy-tuesday" class="level2">
 <h2 class="anchored" data-anchor-id="tidy-tuesday">Tidy Tuesday</h2>
 <p>This is my seventh contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.</p>
@@ -239,17 +242,17 @@ div.csl-indent {
 Quagga mussel population density reached its peak between 1998 and 2002. I am interested in whether the Chinook Salmon population has declined since the discovery of Quagga mussels in 1989 or around their population maximum between 1998 and 2002. Simultaneously, one could suspect an increase in the Yellow Perch population and hence their fishing rate.<br>
 To get a descriptive picture, I first filter out the fishing rates of the Yellow Perch and Chinook Salmon and aggregate the numbers over all lakes in each year:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter out chinook salmon and yellow perch</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>fishing <span class="ot">&lt;-</span> fishing <span class="sc">%&gt;%</span> <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Yellow Perch"</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">"Chinook Salmon"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1992</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get minimum time for each track</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>sumfish <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(fishing<span class="sc">$</span>values <span class="sc">~</span> fishing<span class="sc">$</span>year <span class="sc">+</span> fishing<span class="sc">$</span>species, <span class="at">FUN =</span> sum)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(sumfish) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"year"</span>, <span class="st">"species"</span>, <span class="st">"value"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter out chinook salmon and yellow perch</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>fishing <span class="ot">&lt;-</span> fishing <span class="sc">%&gt;%</span> <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Yellow Perch"</span> <span class="sc">|</span> species <span class="sc">==</span> <span class="st">"Chinook Salmon"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1992</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get minimum time for each track</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sumfish <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(fishing<span class="sc">$</span>values <span class="sc">~</span> fishing<span class="sc">$</span>year <span class="sc">+</span> fishing<span class="sc">$</span>species, <span class="at">FUN =</span> sum)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(sumfish) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"year"</span>, <span class="st">"species"</span>, <span class="st">"value"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then, I plot the amount of fish caught for the Chinook Salmon and the Yellow Perch, respectively:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="commercial-fishing_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="768"></p>
+<p><img src="commercial-fishing_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>It is apparent that the amount of King Salmon has decreased substantially over the years while the weight of caught Yellow Perch has increased, especially during the Quagga mussle population peak between 1998 and 2002. While the decrease in Chinook Salmon is generally considered to be (in large extent) by the large mussle population, it is of course questionable, whether it has led to increasing number of Yellow Perch. This would need much further investigation, but I nonetheless find it an interesting trend.</p>

@@ -14,7 +14,7 @@ image: deforestation.png
 projects: []
 ---
 
-```{r, include=FALSE}
+```{r, include=TRUE}
 library(tidytuesdayR)
 library(ggplot2)
 library(ggthemes)
@@ -26,10 +26,15 @@ library(ggtext)
 library(scales)
 library(tidyr)
 library(gitcreds)
-tuesdata <- tt_load('2021-04-06')
-#load('/home/julian/Desktop/tuesdata.rda')
 font_add_google("Dosis", "dosis")
 knitr::opts_chunk$set(fig.width=9.5, fig.height=5) 
+```
+
+```{r, include=TRUE, eval=FALSE}
+tuesdata <- tidytuesdayR::tt_load('2021-04-06')
+```
+```{r, include=FALSE, eval=TRUE}
+load("data/deforestation.rda")
 ```
 
 ## Tidy Tuesday

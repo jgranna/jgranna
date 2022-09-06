@@ -4,6 +4,8 @@ title: "Research"
 
 ## Publications and Conferences
 
+-   Granna, Brunauer, Lang, 2022. Proposing a global model to overcome the bias-variance tradeoff in the context of hedonic house price models. *Working Papers in Economics and Statistics*. [Link](https://econpapers.repec.org/paper/innwpaper/2022-12.htm)
+
 -   Granna, Brunauer, Lang, 2022. Proposing a global model to overcome the bias-variance tradeoff in the context of hedonic house price models. [*ERES Conference 2022*](https://2022.eres.org/i)*, Milano, Italy.*
 
 -   Granna, Brunauer, Lang, 2021. Reducing bias of hedonic house price indices. *ERES Conference 2021, Kaiserslautern, Germany.*

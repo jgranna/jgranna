@@ -17,8 +17,11 @@ preview_only: no
 projects: []
 ---
   
-```{r setup, include=FALSE, cache = TRUE}
+```{r setup, include=TRUE, cache = TRUE, eval=FALSE}
 data <- tidytuesdayR::tt_load("2021-05-18")
+```
+```{r, eval=TRUE, include=FALSE}
+load("data/manager-salaries.rda")
 ```
 
 ## Tidy Tuesday

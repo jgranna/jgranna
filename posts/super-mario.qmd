@@ -20,8 +20,11 @@ projects: []
   
   
   
-```{r setup, include=FALSE, cache = TRUE}
+```{r setup, include=TRUE, eval=FALSE, cache = TRUE}
 data <- tidytuesdayR::tt_load("2021-05-25")
+```
+```{r, include=FALSE, eval=TRUE}
+load("data/super-mario.rda")
 ```
 
 ## Tidy Tuesday

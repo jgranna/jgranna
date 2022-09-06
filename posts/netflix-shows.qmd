@@ -18,12 +18,11 @@ image: netflix-shows.png
 projects: []
 ---
 
-```{r setup, include=FALSE, cache=TRUE}
-library(tidyverse)
-library(gggibbous)
+```{r setup, include=FALSE, cache=TRUE, eval=FALSE}
 netflix <- tidytuesdayR::tt_load("2021-04-20")
-netflix <- netflix$netflix_titles %>% 
-  drop_na(date_added)
+```
+```{r, include=FALSE, eval=TRUE}
+load("data/netflix-shows.rda")
 ```
 
 ## Tidy Tuesday
@@ -38,12 +37,14 @@ The purpose of these posts is mainly for exercising purposes. Thus, the provided
 
 Netflix provides an increasing number of movies and TV shows in their data base. In order to gain insights by how much the total number of TV shows and movies has increased and whether the TV show / movie overall ratio has changed, I provide the following plot. For this week's data I use the `gggibbous` package which includes so-called "moon graphs".
 
-```{r, include=FALSE}
+```{r, include=TRUE}
 library(tidyverse)
 library(gggibbous)
 library(scales)
 library(showtext)
 library(ggtext)
+netflix <- netflix$netflix_titles %>% 
+  drop_na(date_added)
 knitr::opts_chunk$set(fig.width=12, fig.height=6) 
 netflix$year_added <- as.integer(substr(
   netflix$date_added, 

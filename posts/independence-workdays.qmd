@@ -18,8 +18,12 @@ projects: []
 ---
   
   
-```{r setup, include=FALSE, cache = TRUE}
+```{r setup, include=TRUE, eval=FALSE, cache = TRUE}
 holiday <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-07-06/holidays.csv")
+```
+
+```{r, eval=TRUE, include=FALSE}
+load("data/independence-workdays.rda")
 ```
 
 ## Tidy Tuesday
