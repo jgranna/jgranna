@@ -212,9 +212,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="added-number-of-shows-and-movies-and-their-ratio">Added Number of shows and movies and their ratio</h3>
 <p>Netflix provides an increasing number of movies and TV shows in their data base. In order to gain insights by how much the total number of TV shows and movies has increased and whether the TV show / movie overall ratio has changed, I provide the following plot. For this week’s data I use the <code>gggibbous</code> package which includes so-called “moon graphs”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gggibbous)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+✔ tibble  3.1.8     ✔ dplyr   1.0.9
+✔ tidyr   1.2.0     ✔ stringr 1.4.0
+✔ readr   2.1.2     ✔ forcats 0.5.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gggibbous)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'scales'</code></pre>
@@ -229,38 +243,38 @@ Attaching package: 'scales'</code></pre>
 
     col_factor</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: sysfonts</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: showtextdb</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>netflix <span class="ot">&lt;-</span> netflix<span class="sc">$</span>netflix_titles <span class="sc">%&gt;%</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(date_added)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.width=</span><span class="dv">12</span>, <span class="at">fig.height=</span><span class="dv">6</span>) </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>netflix<span class="sc">$</span>year_added <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">substr</span>(</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  netflix<span class="sc">$</span>date_added, </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">start =</span> <span class="fu">nchar</span>(netflix<span class="sc">$</span>date_added) <span class="sc">-</span> <span class="dv">3</span>,</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">stop  =</span> <span class="fu">nchar</span>(netflix<span class="sc">$</span>date_added)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>netflix <span class="ot">&lt;-</span> netflix <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year_added <span class="sc">&gt;</span> <span class="dv">2015</span> <span class="sc">&amp;</span> year_added <span class="sc">&lt;</span> <span class="dv">2021</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>moons <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">1</span>, </span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">c</span>(<span class="fu">sort</span>(<span class="fu">unique</span>(netflix<span class="sc">$</span>year_added)), <span class="fu">sort</span>(<span class="fu">unique</span>(netflix<span class="sc">$</span>year_added))),  </span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">shows =</span> <span class="dv">0</span>, </span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">movies =</span> <span class="dv">0</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">min</span>(netflix<span class="sc">$</span>year_added)<span class="sc">:</span><span class="fu">max</span>(netflix<span class="sc">$</span>year_added)) {</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  moons<span class="sc">$</span>movies[moons<span class="sc">$</span>year <span class="sc">==</span> i] <span class="ot">&lt;-</span> <span class="fu">table</span>(netflix<span class="sc">$</span>type[netflix<span class="sc">$</span>year_added <span class="sc">==</span> i])[<span class="dv">1</span>]</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  moons<span class="sc">$</span>shows[moons<span class="sc">$</span>year <span class="sc">==</span> i]  <span class="ot">&lt;-</span> <span class="fu">table</span>(netflix<span class="sc">$</span>type[netflix<span class="sc">$</span>year_added <span class="sc">==</span> i])[<span class="dv">2</span>]</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>sum   <span class="ot">&lt;-</span> moons<span class="sc">$</span>shows <span class="sc">+</span> moons<span class="sc">$</span>shows</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>ratio <span class="ot">&lt;-</span> moons<span class="sc">$</span>shows<span class="sc">/</span>(moons<span class="sc">$</span>movies<span class="sc">+</span>moons<span class="sc">$</span>shows)</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>ratio[<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> moons<span class="sc">$</span>ratio[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>right <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="at">each =</span> <span class="dv">5</span>)</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>year_t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2016</span>, <span class="dv">2018</span>, <span class="fl">2020.7</span>, <span class="fl">2024.3</span>, <span class="fl">2028.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>netflix <span class="ot">&lt;-</span> netflix<span class="sc">$</span>netflix_titles <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(date_added)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.width=</span><span class="dv">12</span>, <span class="at">fig.height=</span><span class="dv">6</span>) </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>netflix<span class="sc">$</span>year_added <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">substr</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  netflix<span class="sc">$</span>date_added, </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">start =</span> <span class="fu">nchar</span>(netflix<span class="sc">$</span>date_added) <span class="sc">-</span> <span class="dv">3</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">stop  =</span> <span class="fu">nchar</span>(netflix<span class="sc">$</span>date_added)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>netflix <span class="ot">&lt;-</span> netflix <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year_added <span class="sc">&gt;</span> <span class="dv">2015</span> <span class="sc">&amp;</span> year_added <span class="sc">&lt;</span> <span class="dv">2021</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>moons <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="dv">1</span>, </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">c</span>(<span class="fu">sort</span>(<span class="fu">unique</span>(netflix<span class="sc">$</span>year_added)), <span class="fu">sort</span>(<span class="fu">unique</span>(netflix<span class="sc">$</span>year_added))),  </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">shows =</span> <span class="dv">0</span>, </span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">movies =</span> <span class="dv">0</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">min</span>(netflix<span class="sc">$</span>year_added)<span class="sc">:</span><span class="fu">max</span>(netflix<span class="sc">$</span>year_added)) {</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  moons<span class="sc">$</span>movies[moons<span class="sc">$</span>year <span class="sc">==</span> i] <span class="ot">&lt;-</span> <span class="fu">table</span>(netflix<span class="sc">$</span>type[netflix<span class="sc">$</span>year_added <span class="sc">==</span> i])[<span class="dv">1</span>]</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  moons<span class="sc">$</span>shows[moons<span class="sc">$</span>year <span class="sc">==</span> i]  <span class="ot">&lt;-</span> <span class="fu">table</span>(netflix<span class="sc">$</span>type[netflix<span class="sc">$</span>year_added <span class="sc">==</span> i])[<span class="dv">2</span>]</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>sum   <span class="ot">&lt;-</span> moons<span class="sc">$</span>shows <span class="sc">+</span> moons<span class="sc">$</span>shows</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>ratio <span class="ot">&lt;-</span> moons<span class="sc">$</span>shows<span class="sc">/</span>(moons<span class="sc">$</span>movies<span class="sc">+</span>moons<span class="sc">$</span>shows)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>ratio[<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> moons<span class="sc">$</span>ratio[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>right <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="at">each =</span> <span class="dv">5</span>)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>moons<span class="sc">$</span>year_t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2016</span>, <span class="dv">2018</span>, <span class="fl">2020.7</span>, <span class="fl">2024.3</span>, <span class="fl">2028.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
