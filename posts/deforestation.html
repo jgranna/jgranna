@@ -17,6 +17,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -146,6 +209,39 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytuesdayR)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstream)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'cowplot'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggthemes':
+
+    theme_map</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(streamgraph)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: sysfonts</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: showtextdb</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gitcreds)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">font_add_google</span>(<span class="st">"Dosis"</span>, <span class="st">"dosis"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.width=</span><span class="fl">9.5</span>, <span class="at">fig.height=</span><span class="dv">5</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">'2021-04-06'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="tidy-tuesday" class="level2">
 <h2 class="anchored" data-anchor-id="tidy-tuesday">Tidy Tuesday</h2>
 <p>This is my first contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.</p>
@@ -156,7 +252,7 @@ ul.task-list{list-style: none;}
 <p>Streamgraph for soy production per continent:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="deforestation_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="912"></p>
+<p><img src="deforestation_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="912"></p>
 </div>
 </div>
 <p>The global production of soy has increased rapidly over the last 60 years. Europe’s share in global production is stagnating and stable since around 1980. Growth in soy production mainly stems from production increases in Asia and South America.</p>
@@ -166,9 +262,9 @@ ul.task-list{list-style: none;}
 <p>Hover over graph to show cumulated soy production over all years (in million tonnes).</p>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<div id="htmlwidget-95a6987ca75e5f741e59" class="streamgraph html-widget" style="width:1000px;height:300px;"></div>
-<div id="htmlwidget-95a6987ca75e5f741e59-legend" style="width:1000px" class="streamgraph html-widget-legend"><center><label style="padding-right:5px" for="htmlwidget-95a6987ca75e5f741e59-select"></label><select id="htmlwidget-95a6987ca75e5f741e59-select" style="visibility:hidden;"></select></center></div>
-<script type="application/json" data-for="htmlwidget-95a6987ca75e5f741e59">{"x":{"data":{"key":["Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America"],"value":[0.053,7.336,2.508,0,0.223,0.067,7.574,2.956,0,0.283,0.043,8.299,3.206,0.001,0.322,0.063,8.708,3.524,0.003,0.374,0.052,8.393,4.147,0.007,0.457,0.049,10.161,4.854,0.022,0.555,0.057,10.57,5.423,0.003,0.559,0.06,10.462,5.443,0.005,0.706,0.064,10.664,5.919,0.001,0.852,0.066,11.977,7.791,0.004,1.289,0.068,12.285,8.306,0.013,1.879,0.08,11.585,8.743,0.03,2.572,0.092,12.496,9.794,0.024,3.393,0.114,12.472,12.148,0.093,4.96,0.115,12.433,11.218,0.079,7.035,0.136,12.697,14.27,0.014,8.755,0.182,13.071,14.438,0.073,9.467,0.24,14.247,16.277,0.088,10.511,0.298,14.795,17.648,0.086,10.628,0.315,15.657,18.757,0.089,13.818,0.328,16.913,16.731,0.109,15.804,0.391,17.62,18.683,0.082,15.288,0.352,18.137,17.766,0.072,16.108,0.356,18.305,15.777,0.105,16.701,0.394,19.319,16.411,0.13,18.45,0.415,20.616,17.357,0.089,17.966,0.489,21.258,19.22,0.074,20.581,0.546,22.083,17.721,0.089,21.56,0.681,22.024,16.112,0.2,23.315,0.652,22.786,17.272,0.073,23.976,0.613,22.181,16.632,0.13,22.73,0.695,23.881,16.815,0.12,25.745,0.712,29.556,14.929,0.095,27.115,0.672,30.407,15.496,0.121,29.822,0.924,30.061,17.352,0.117,32.327,0.933,32.5,16.821,0.259,33.197,1.026,35.516,17.492,0.252,32.049,1.075,36.456,18.623,0.064,39.914,1.229,38.655,18.273,0.164,41.115,1.319,42.522,17.321,0.257,41.208,1.497,47.102,19.556,0.087,44.491,1.697,47.854,20.282,0.06,50.973,1.787,56.057,19.074,0.098,56.784,1.682,57.398,16.921,0.138,57.83,2.312,62.702,17.463,0.192,62.938,2.284,64.921,17.668,0.128,65.488,2.582,70.181,18.012,0.048,72.531,2.802,70.875,18,0.038,68.697,2.908,76.564,17.164,0.076,65.24,3.227,92.058,18.639,0.061,77.561,3.563,92.925,17.808,0.033,80.487,3.896,98.619,17.403,0.096,74.63,3.941,99.266,18.543,0.087,78.15],"date":["1961-01-01","1961-01-01","1961-01-01","1961-01-01","1961-01-01","1962-01-01","1962-01-01","1962-01-01","1962-01-01","1962-01-01","1963-01-01","1963-01-01","1963-01-01","1963-01-01","1963-01-01","1964-01-01","1964-01-01","1964-01-01","1964-01-01","1964-01-01","1965-01-01","1965-01-01","1965-01-01","1965-01-01","1965-01-01","1966-01-01","1966-01-01","1966-01-01","1966-01-01","1966-01-01","1967-01-01","1967-01-01","1967-01-01","1967-01-01","1967-01-01","1968-01-01","1968-01-01","1968-01-01","1968-01-01","1968-01-01","1969-01-01","1969-01-01","1969-01-01","1969-01-01","1969-01-01","1970-01-01","1970-01-01","1970-01-01","1970-01-01","1970-01-01","1971-01-01","1971-01-01","1971-01-01","1971-01-01","1971-01-01","1972-01-01","1972-01-01","1972-01-01","1972-01-01","1972-01-01","1973-01-01","1973-01-01","1973-01-01","1973-01-01","1973-01-01","1974-01-01","1974-01-01","1974-01-01","1974-01-01","1974-01-01","1975-01-01","1975-01-01","1975-01-01","1975-01-01","1975-01-01","1976-01-01","1976-01-01","1976-01-01","1976-01-01","1976-01-01","1977-01-01","1977-01-01","1977-01-01","1977-01-01","1977-01-01","1978-01-01","1978-01-01","1978-01-01","1978-01-01","1978-01-01","1979-01-01","1979-01-01","1979-01-01","1979-01-01","1979-01-01","1980-01-01","1980-01-01","1980-01-01","1980-01-01","1980-01-01","1981-01-01","1981-01-01","1981-01-01","1981-01-01","1981-01-01","1982-01-01","1982-01-01","1982-01-01","1982-01-01","1982-01-01","1983-01-01","1983-01-01","1983-01-01","1983-01-01","1983-01-01","1984-01-01","1984-01-01","1984-01-01","1984-01-01","1984-01-01","1985-01-01","1985-01-01","1985-01-01","1985-01-01","1985-01-01","1986-01-01","1986-01-01","1986-01-01","1986-01-01","1986-01-01","1987-01-01","1987-01-01","1987-01-01","1987-01-01","1987-01-01","1988-01-01","1988-01-01","1988-01-01","1988-01-01","1988-01-01","1989-01-01","1989-01-01","1989-01-01","1989-01-01","1989-01-01","1990-01-01","1990-01-01","1990-01-01","1990-01-01","1990-01-01","1991-01-01","1991-01-01","1991-01-01","1991-01-01","1991-01-01","1992-01-01","1992-01-01","1992-01-01","1992-01-01","1992-01-01","1993-01-01","1993-01-01","1993-01-01","1993-01-01","1993-01-01","1994-01-01","1994-01-01","1994-01-01","1994-01-01","1994-01-01","1995-01-01","1995-01-01","1995-01-01","1995-01-01","1995-01-01","1996-01-01","1996-01-01","1996-01-01","1996-01-01","1996-01-01","1997-01-01","1997-01-01","1997-01-01","1997-01-01","1997-01-01","1998-01-01","1998-01-01","1998-01-01","1998-01-01","1998-01-01","1999-01-01","1999-01-01","1999-01-01","1999-01-01","1999-01-01","2000-01-01","2000-01-01","2000-01-01","2000-01-01","2000-01-01","2001-01-01","2001-01-01","2001-01-01","2001-01-01","2001-01-01","2002-01-01","2002-01-01","2002-01-01","2002-01-01","2002-01-01","2003-01-01","2003-01-01","2003-01-01","2003-01-01","2003-01-01","2004-01-01","2004-01-01","2004-01-01","2004-01-01","2004-01-01","2005-01-01","2005-01-01","2005-01-01","2005-01-01","2005-01-01","2006-01-01","2006-01-01","2006-01-01","2006-01-01","2006-01-01","2007-01-01","2007-01-01","2007-01-01","2007-01-01","2007-01-01","2008-01-01","2008-01-01","2008-01-01","2008-01-01","2008-01-01","2009-01-01","2009-01-01","2009-01-01","2009-01-01","2009-01-01","2010-01-01","2010-01-01","2010-01-01","2010-01-01","2010-01-01","2011-01-01","2011-01-01","2011-01-01","2011-01-01","2011-01-01","2012-01-01","2012-01-01","2012-01-01","2012-01-01","2012-01-01","2013-01-01","2013-01-01","2013-01-01","2013-01-01","2013-01-01"]},"markers":null,"annotations":null,"offset":"silhouette","interactive":true,"interpolate":"cardinal","palette":"PuOr","text":"black","tooltip":"black","x_tick_interval":10,"x_tick_units":"year","x_tick_format":"%Y","y_tick_count":5,"y_tick_format":",g","top":20,"right":40,"bottom":30,"left":50,"legend":true,"legend_label":"","fill":"brewer","label_col":"black","x_scale":"date","sort":true,"order":"none"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9bde3d8e56e431d4dba8" class="streamgraph html-widget" style="width:1000px;height:300px;"></div>
+<div id="htmlwidget-9bde3d8e56e431d4dba8-legend" style="width:1000px" class="streamgraph html-widget-legend"><center><label style="padding-right:5px" for="htmlwidget-9bde3d8e56e431d4dba8-select"></label><select id="htmlwidget-9bde3d8e56e431d4dba8-select" style="visibility:hidden;"></select></center></div>
+<script type="application/json" data-for="htmlwidget-9bde3d8e56e431d4dba8">{"x":{"data":{"key":["Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America","Africa","Asia","Europe","Oceania","South America"],"value":[0.053,7.336,2.508,0,0.223,0.067,7.574,2.956,0,0.283,0.043,8.299,3.206,0.001,0.322,0.063,8.708,3.524,0.003,0.374,0.052,8.393,4.147,0.007,0.457,0.049,10.161,4.854,0.022,0.555,0.057,10.57,5.423,0.003,0.559,0.06,10.462,5.443,0.005,0.706,0.064,10.664,5.919,0.001,0.852,0.066,11.977,7.791,0.004,1.289,0.068,12.285,8.306,0.013,1.879,0.08,11.585,8.743,0.03,2.572,0.092,12.496,9.794,0.024,3.393,0.114,12.472,12.148,0.093,4.96,0.115,12.433,11.218,0.079,7.035,0.136,12.697,14.27,0.014,8.755,0.182,13.071,14.438,0.073,9.467,0.24,14.247,16.277,0.088,10.511,0.298,14.795,17.648,0.086,10.628,0.315,15.657,18.757,0.089,13.818,0.328,16.913,16.731,0.109,15.804,0.391,17.62,18.683,0.082,15.288,0.352,18.137,17.766,0.072,16.108,0.356,18.305,15.777,0.105,16.701,0.394,19.319,16.411,0.13,18.45,0.415,20.616,17.357,0.089,17.966,0.489,21.258,19.22,0.074,20.581,0.546,22.083,17.721,0.089,21.56,0.681,22.024,16.112,0.2,23.315,0.652,22.786,17.272,0.073,23.976,0.613,22.181,16.632,0.13,22.73,0.695,23.881,16.815,0.12,25.745,0.712,29.556,14.929,0.095,27.115,0.672,30.407,15.496,0.121,29.822,0.924,30.061,17.352,0.117,32.327,0.933,32.5,16.821,0.259,33.197,1.026,35.516,17.492,0.252,32.049,1.075,36.456,18.623,0.064,39.914,1.229,38.655,18.273,0.164,41.115,1.319,42.522,17.321,0.257,41.208,1.497,47.102,19.556,0.087,44.491,1.697,47.854,20.282,0.06,50.973,1.787,56.057,19.074,0.098,56.784,1.682,57.398,16.921,0.138,57.83,2.312,62.702,17.463,0.192,62.938,2.284,64.921,17.668,0.128,65.488,2.582,70.181,18.012,0.048,72.531,2.802,70.875,18,0.038,68.697,2.908,76.564,17.164,0.076,65.24,3.227,92.058,18.639,0.061,77.561,3.563,92.925,17.808,0.033,80.487,3.896,98.619,17.403,0.096,74.63,3.941,99.266,18.543,0.087,78.15],"date":["1961-01-01","1961-01-01","1961-01-01","1961-01-01","1961-01-01","1962-01-01","1962-01-01","1962-01-01","1962-01-01","1962-01-01","1963-01-01","1963-01-01","1963-01-01","1963-01-01","1963-01-01","1964-01-01","1964-01-01","1964-01-01","1964-01-01","1964-01-01","1965-01-01","1965-01-01","1965-01-01","1965-01-01","1965-01-01","1966-01-01","1966-01-01","1966-01-01","1966-01-01","1966-01-01","1967-01-01","1967-01-01","1967-01-01","1967-01-01","1967-01-01","1968-01-01","1968-01-01","1968-01-01","1968-01-01","1968-01-01","1969-01-01","1969-01-01","1969-01-01","1969-01-01","1969-01-01","1970-01-01","1970-01-01","1970-01-01","1970-01-01","1970-01-01","1971-01-01","1971-01-01","1971-01-01","1971-01-01","1971-01-01","1972-01-01","1972-01-01","1972-01-01","1972-01-01","1972-01-01","1973-01-01","1973-01-01","1973-01-01","1973-01-01","1973-01-01","1974-01-01","1974-01-01","1974-01-01","1974-01-01","1974-01-01","1975-01-01","1975-01-01","1975-01-01","1975-01-01","1975-01-01","1976-01-01","1976-01-01","1976-01-01","1976-01-01","1976-01-01","1977-01-01","1977-01-01","1977-01-01","1977-01-01","1977-01-01","1978-01-01","1978-01-01","1978-01-01","1978-01-01","1978-01-01","1979-01-01","1979-01-01","1979-01-01","1979-01-01","1979-01-01","1980-01-01","1980-01-01","1980-01-01","1980-01-01","1980-01-01","1981-01-01","1981-01-01","1981-01-01","1981-01-01","1981-01-01","1982-01-01","1982-01-01","1982-01-01","1982-01-01","1982-01-01","1983-01-01","1983-01-01","1983-01-01","1983-01-01","1983-01-01","1984-01-01","1984-01-01","1984-01-01","1984-01-01","1984-01-01","1985-01-01","1985-01-01","1985-01-01","1985-01-01","1985-01-01","1986-01-01","1986-01-01","1986-01-01","1986-01-01","1986-01-01","1987-01-01","1987-01-01","1987-01-01","1987-01-01","1987-01-01","1988-01-01","1988-01-01","1988-01-01","1988-01-01","1988-01-01","1989-01-01","1989-01-01","1989-01-01","1989-01-01","1989-01-01","1990-01-01","1990-01-01","1990-01-01","1990-01-01","1990-01-01","1991-01-01","1991-01-01","1991-01-01","1991-01-01","1991-01-01","1992-01-01","1992-01-01","1992-01-01","1992-01-01","1992-01-01","1993-01-01","1993-01-01","1993-01-01","1993-01-01","1993-01-01","1994-01-01","1994-01-01","1994-01-01","1994-01-01","1994-01-01","1995-01-01","1995-01-01","1995-01-01","1995-01-01","1995-01-01","1996-01-01","1996-01-01","1996-01-01","1996-01-01","1996-01-01","1997-01-01","1997-01-01","1997-01-01","1997-01-01","1997-01-01","1998-01-01","1998-01-01","1998-01-01","1998-01-01","1998-01-01","1999-01-01","1999-01-01","1999-01-01","1999-01-01","1999-01-01","2000-01-01","2000-01-01","2000-01-01","2000-01-01","2000-01-01","2001-01-01","2001-01-01","2001-01-01","2001-01-01","2001-01-01","2002-01-01","2002-01-01","2002-01-01","2002-01-01","2002-01-01","2003-01-01","2003-01-01","2003-01-01","2003-01-01","2003-01-01","2004-01-01","2004-01-01","2004-01-01","2004-01-01","2004-01-01","2005-01-01","2005-01-01","2005-01-01","2005-01-01","2005-01-01","2006-01-01","2006-01-01","2006-01-01","2006-01-01","2006-01-01","2007-01-01","2007-01-01","2007-01-01","2007-01-01","2007-01-01","2008-01-01","2008-01-01","2008-01-01","2008-01-01","2008-01-01","2009-01-01","2009-01-01","2009-01-01","2009-01-01","2009-01-01","2010-01-01","2010-01-01","2010-01-01","2010-01-01","2010-01-01","2011-01-01","2011-01-01","2011-01-01","2011-01-01","2011-01-01","2012-01-01","2012-01-01","2012-01-01","2012-01-01","2012-01-01","2013-01-01","2013-01-01","2013-01-01","2013-01-01","2013-01-01"]},"markers":null,"annotations":null,"offset":"silhouette","interactive":true,"interpolate":"cardinal","palette":"PuOr","text":"black","tooltip":"black","x_tick_interval":10,"x_tick_units":"year","x_tick_format":"%Y","y_tick_count":5,"y_tick_format":",g","top":20,"right":40,"bottom":30,"left":50,"legend":true,"legend_label":"","fill":"brewer","label_col":"black","x_scale":"date","sort":true,"order":"none"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -177,7 +273,7 @@ ul.task-list{list-style: none;}
 <p>To get a picture of total forest loss next to forest loss and its causes, it is useful to again regard the corresponding streamgraph:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="deforestation_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="912"></p>
+<p><img src="deforestation_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="912"></p>
 </div>
 </div>
 <p>The graph shows that total forest loss between 2001 and 2004 is much higher than in more recent years. This corresponds to evolution of forest losses in other countries with increasing development. This trend however, could (temporarily) reverse in more recent years due to less regulatory restrictions. Pasture is the major cause of forest loss in Brazil. This is true over the whole time horizon. However, the share has been decreasing in recent years. Other causes, like fire, roads, or plantations including palm oil, play a much smaller - but also substantial - role.</p>
@@ -190,7 +286,7 @@ ul.task-list{list-style: none;}
 <p>Visualize change in change of global forest share over time:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="deforestation_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="912"></p>
+<p><img src="deforestation_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="912"></p>
 </div>
 </div>
 <p>The share of each continents’ forest area of the world’s total forest area has not changed substantially over the last 30 years.</p>

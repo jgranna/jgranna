@@ -25,7 +25,14 @@
     "href": "posts/commercial-fishing.html",
     "title": "Commercial Fishing",
     "section": "",
-    "text": "This is my seventh contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+    "text": "data <- tidytuesdayR::tt_load('2021-06-08')"
+  },
+  {
+    "objectID": "posts/commercial-fishing.html#tidy-tuesday",
+    "href": "posts/commercial-fishing.html#tidy-tuesday",
+    "title": "Commercial Fishing",
+    "section": "Tidy Tuesday",
+    "text": "Tidy Tuesday\nThis is my seventh contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
   },
   {
     "objectID": "posts/commercial-fishing.html#commercial-fishing",
@@ -102,7 +109,14 @@
     "href": "posts/deforestation.html",
     "title": "Deforestation",
     "section": "",
-    "text": "This is my first contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage or check out their GitHub repository."
+    "text": "library(tidytuesdayR)\nlibrary(ggplot2)\nlibrary(ggthemes)\nlibrary(ggstream)\nlibrary(cowplot)\n\n\nAttaching package: 'cowplot'\n\n\nThe following object is masked from 'package:ggthemes':\n\n    theme_map\n\nlibrary(streamgraph)\nlibrary(showtext)\n\nLoading required package: sysfonts\n\n\nLoading required package: showtextdb\n\nlibrary(ggtext)\nlibrary(scales)\nlibrary(tidyr)\nlibrary(gitcreds)\nfont_add_google(\"Dosis\", \"dosis\")\nknitr::opts_chunk$set(fig.width=9.5, fig.height=5)"
+  },
+  {
+    "objectID": "posts/deforestation.html#tidy-tuesday",
+    "href": "posts/deforestation.html#tidy-tuesday",
+    "title": "Deforestation",
+    "section": "Tidy Tuesday",
+    "text": "Tidy Tuesday\nThis is my first contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage or check out their GitHub repository."
   },
   {
     "objectID": "posts/deforestation.html#worldwide-soy-production-over-time",
@@ -137,7 +151,14 @@
     "href": "posts/ceo-departures.html",
     "title": "CEO departures from S&P 1500",
     "section": "",
-    "text": "This is my fourth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+    "text": "data <- tidytuesdayR::tt_load(\"2021-04-27\")"
+  },
+  {
+    "objectID": "posts/ceo-departures.html#tidy-tuesday",
+    "href": "posts/ceo-departures.html#tidy-tuesday",
+    "title": "CEO departures from S&P 1500",
+    "section": "Tidy Tuesday",
+    "text": "Tidy Tuesday\nThis is my fourth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
   },
   {
     "objectID": "posts/ceo-departures.html#this-weeks-data",
@@ -165,7 +186,14 @@
     "href": "posts/water-sources.html",
     "title": "Water Sources",
     "section": "",
-    "text": "This is my fourth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+    "text": "data <- tidytuesdayR::tt_load(\"2021-05-04\")"
+  },
+  {
+    "objectID": "posts/water-sources.html#tidy-tuesday",
+    "href": "posts/water-sources.html#tidy-tuesday",
+    "title": "Water Sources",
+    "section": "Tidy Tuesday",
+    "text": "Tidy Tuesday\nThis is my fourth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
   },
   {
     "objectID": "posts/water-sources.html#water-sources",
@@ -180,6 +208,34 @@
     "title": "Water Sources",
     "section": "References",
     "text": "References\n\nggtext-package:\nhttps://wilkelab.org/ggtext/\nshowtext-package:\nhttps://github.com/yixuan/showtext\ntidyverse-package:\nhttps://www.tidyverse.org/\nrnaturalearth-package:\nhttps://docs.ropensci.org/rnaturalearth/\nrnaturalearthdata-package:\nhttps://docs.ropensci.org/rnaturalearthdata/\nggspatial-package:\nhttps://paleolimbot.github.io/ggspatial/\nsf-package:\nhttps://r-spatial.github.io/sf/\ndata.table-package:\nhttps://rdatatable.gitlab.io/data.table/\n\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "posts/pell_awards.html",
+    "href": "posts/pell_awards.html",
+    "title": "Pell Awards",
+    "section": "",
+    "text": "data <- tidytuesdayR::tt_load(\"2022-08-30\")"
+  },
+  {
+    "objectID": "posts/pell_awards.html#tidy-tuesday",
+    "href": "posts/pell_awards.html#tidy-tuesday",
+    "title": "Pell Awards",
+    "section": "Tidy Tuesday",
+    "text": "Tidy Tuesday\nThis is my tenth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom.\nNote: This is the first post I generate using Quarto, ‘an open-source scientific and technical publishing system built on Pandoc’. I will use it frequently in my following posts.\n\nlibrary(colorspace)\nlibrary(knitr)\nlibrary(sf)\n\nLinking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE\n\nlibrary(ggtext)\nlibrary(ggplot2)\nlibrary(rnaturalearth)\nlibrary(rnaturalearthdata)\nlibrary(ggpattern)\nlibrary(showtext)\n\nLoading required package: sysfonts\n\n\nLoading required package: showtextdb"
+  },
+  {
+    "objectID": "posts/pell_awards.html#pell-grants",
+    "href": "posts/pell_awards.html#pell-grants",
+    "title": "Pell Awards",
+    "section": "Pell Grants",
+    "text": "Pell Grants\nThis week’s data comes from US Department of Education. It is also available via the Pell Grant on CRAN. More details about the data can also be found in the package’s vignette. It contains 100474 observations of six variables (state, award, recipient, name, session, year). This is a quick look at the variables and their meaning (from the Tidy Tuesday vignette):\n\nVariable description\n\n\nvariable\nclass\ndescription\n\n\n\n\nSTATE\ninteger\nState shortcode\n\n\nAWARD\ndouble\nAward amount in USD\n\n\nRECIPIENT\ndouble\nTotal number of recipients by year, name\n\n\nNAME\ninteger\nName of college / university\n\n\nSESSION\ninteger\nSession group\n\n\nYEAR\ninteger\nYear\n\n\n\n\nHighest number of awards per university\nTo start out, I take a quick look at the universities who received the highest (and lowest) total amount of grants over the complete time horizon (1999 - 2017):\n\npell <- na.omit(pell)\nkable(\n  head(sort(tapply(pell$AWARD, pell$NAME, sum), decreasing = TRUE)),\n      col.names = c(\"Total grant money received\")\n)\n\n\n\n\n\n\n\n\n\nTotal grant money received\n\n\n\n\nUniversity of Phoenix\n7949271992\n\n\nAshford University\n1940355376\n\n\nCity University of New York Central Office\n1885270659\n\n\nItt Technical Institute\n1830449269\n\n\nDevry University\n1817806084\n\n\nKaplan University\n1531089195\n\n\n\n\n\nI use the kable() function from the knitr package in order to directly convert the R output to a table that can be displayed on this website. There are of course other possible ways to summarize the data, and some applicants prefer functions from the tidyverse package. I however, do not.\n\nkable(\n  head(sort(tapply(pell$AWARD, pell$NAME, sum), decreasing = FALSE)),\n      col.names = c(\"Total grant money received\")\n)\n\n\n\n\n\n\n\n\n\nTotal grant money received\n\n\n\n\nBank Street College of Education\n0\n\n\nBilingual Education Institute\n0\n\n\nBriarcliffe College - Patchogue\n0\n\n\nClaremont Graduate University\n0\n\n\nCuyahoga Community College - District Office\n0\n\n\nEastern New Mexico University - Rowsell\n0\n\n\n\n\n\nStudents from the University of Phoenix have received the most fundings from the Pell grant over the whole time horizon, totalling up to almost 7 billion USD from 1999-2017. Some universities / colleges, like Claremont Graduate University, have received no Pell Grants in the regarded horizon.\n\n\nDistribution of grants over the states\nAnother interesting aspect is the distribution of grants over the states in the US. I look at this aspect using a map generated again with the sf package. A new package I just discovered is the ggpattern package. I want to try this package and use it to color the background behind the actual map.\n\n\nRetrieving data for the year 2020\n\n\n\n# actual plot\ntheme_set(theme(text = element_text(family = \"osans\", size = 25)))\nshowtext_auto()\nggplot(a) + \n  geom_rect_pattern(aes(xmin = -3000000, xmax =3000000, ymin = -3000000, ymax = 900000), pattern = \"magick\",\n                    fill = \"#dcf1ff\", pattern_type = 'gray15', pattern_scale = 2, \n                    pattern_colour = \"#007ed3\", pattern_alpha = 0.002, pattern_angle = 40) +\n  geom_sf(aes(fill = amount)) +\n  scale_fill_binned_sequential(palette = \"Blue-Yellow\") +\n  coord_sf(crs = st_crs(2163), xlim = c(-2500000, 2500000), ylim = c(-2300000, \n         730000)) +\n  labs(\n    title = bquote(bold(\"Pell Awards Granted in the US\")),\n    subtitle = \"from 1999 to 2017\",\n    fill = bquote(bold(\"Grant amount\")~\" (in billion USD)\"),\n    caption = \"@jugRanna<br>**Source:** US Department of Education\"\n  ) +\n  theme(\n    plot.title = element_text(family = \"qwitcher\", size = 55, lineheight = 0, margin = margin(1, 0, 0.1, 1), vjust = -0.7),\n    plot.subtitle = element_text(family = \"qwitcher\", size = 45, lineheight = 0.35, vjust = 0.4),\n    legend.position = \"bottom\",\n    legend.background = element_rect(fill = '#ebf1f5', color = '#ebf1f5'),\n    panel.background = element_rect(fill = 'white', color = 'black'),\n    plot.background = element_rect(fill = \"#ebf1f5\", color = \"#ebf1f5\"),\n    plot.title.position = \"plot\",\n    panel.border = element_rect(color = \"black\", fill = NA, size = 2),\n    plot.caption = element_markdown(color = \"gray60\", lineheight = 0.35, hjust = 1, size = 20),\n    plot.caption.position = \"plot\"\n  ) +\n  guides(fill = guide_colorsteps(title.position = 'bottom', even.steps = TRUE,\n                                 barwidth = 20, barheight = 0.5,\n                                  title.hjust = .5)) \n\n\n\n\nIt is apparant that students in California have received the most money from the Pell Grant, more than 40 billion USD between 1999 and 2017. A close look at the number of universities / colleges reveals why that is the case (or at least part of the reason):\n\nkable(\n  head(\n    sort(table(pell$STATE), decreasing = TRUE)\n  )\n)\n\n\n\n\nVar1\nFreq\n\n\n\n\nCA\n9593\n\n\nNY\n6736\n\n\nTX\n5482\n\n\nPA\n5453\n\n\nFL\n4744\n\n\nOH\n4570\n\n\n\n\n\nCalifornia has by far the most universities / colleges in the country. Other states that show higher numbers in schools also receive more money from the Pell Grant.\n\nFull R code available on Github."
+  },
+  {
+    "objectID": "posts/pell_awards.html#references",
+    "href": "posts/pell_awards.html#references",
+    "title": "Pell Awards",
+    "section": "References",
+    "text": "References\n\ncolorspace-package:\nhttps://colorspace.r-forge.r-project.org/index.html\nknitr-package:\nhttps://yihui.org/knitr/\nsf-package:\nhttps://r-spatial.github.io/sf/\nrnaturalearth-package:\nhttps://docs.ropensci.org/rnaturalearth/\nggpattern-package:\nhttps://coolbutuseless.github.io/package/ggpattern/index.html\nshowtext-package:\nhttps://cran.r-project.org/web/packages/showtext/index.html\nggtext--package: https://wilkelab.org/ggtext/"
   },
   {
     "objectID": "posts/post-offices.html",
@@ -207,7 +263,7 @@
     "href": "posts/netflix-shows.html",
     "title": "Netflix shows and movies",
     "section": "",
-    "text": "This is my third contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom.\n\n\nNetflix provides an increasing number of movies and TV shows in their data base. In order to gain insights by how much the total number of TV shows and movies has increased and whether the TV show / movie overall ratio has changed, I provide the following plot. For this week’s data I use the gggibbous package which includes so-called “moon graphs”.\n\n\n\n\n\nThe number of added movies and TV shows has increased over the years. For all years, Netflix added more movies than TV shows."
+    "text": "This is my third contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom.\n\n\nNetflix provides an increasing number of movies and TV shows in their data base. In order to gain insights by how much the total number of TV shows and movies has increased and whether the TV show / movie overall ratio has changed, I provide the following plot. For this week’s data I use the gggibbous package which includes so-called “moon graphs”.\n\nlibrary(tidyverse)\nlibrary(gggibbous)\nlibrary(scales)\n\n\nAttaching package: 'scales'\n\n\nThe following object is masked from 'package:purrr':\n\n    discard\n\n\nThe following object is masked from 'package:readr':\n\n    col_factor\n\nlibrary(showtext)\n\nLoading required package: sysfonts\n\n\nLoading required package: showtextdb\n\nlibrary(ggtext)\nnetflix <- netflix$netflix_titles %>% \n  drop_na(date_added)\nknitr::opts_chunk$set(fig.width=12, fig.height=6) \nnetflix$year_added <- as.integer(substr(\n  netflix$date_added, \n  start = nchar(netflix$date_added) - 3,\n  stop  = nchar(netflix$date_added)\n))\nnetflix <- netflix %>% filter(year_added > 2015 & year_added < 2021)\nmoons <- data.frame(\n    y = 1, \n    year = c(sort(unique(netflix$year_added)), sort(unique(netflix$year_added))),  \n    shows = 0, \n    movies = 0\n  )\nfor (i in min(netflix$year_added):max(netflix$year_added)) {\n  moons$movies[moons$year == i] <- table(netflix$type[netflix$year_added == i])[1]\n  moons$shows[moons$year == i]  <- table(netflix$type[netflix$year_added == i])[2]\n}\nmoons$sum   <- moons$shows + moons$shows\nmoons$ratio <- moons$shows/(moons$movies+moons$shows)\nmoons$ratio[6:10] <- 1 - moons$ratio[1:5]\nmoons$right <- rep(c(TRUE, FALSE), each = 5)\nmoons$year_t <- c(2016, 2018, 2020.7, 2024.3, 2028.5)\n\n\n\n\n\n\nThe number of added movies and TV shows has increased over the years. For all years, Netflix added more movies than TV shows."
   },
   {
     "objectID": "posts/netflix-shows.html#references",
@@ -221,7 +277,14 @@
     "href": "posts/super-mario.html",
     "title": "Super Mario Kart N64",
     "section": "",
-    "text": "This is my sixth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+    "text": "data <- tidytuesdayR::tt_load(\"2021-05-25\")"
+  },
+  {
+    "objectID": "posts/super-mario.html#tidy-tuesday",
+    "href": "posts/super-mario.html#tidy-tuesday",
+    "title": "Super Mario Kart N64",
+    "section": "Tidy Tuesday",
+    "text": "Tidy Tuesday\nThis is my sixth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
   },
   {
     "objectID": "posts/super-mario.html#super-mario-kart",
@@ -242,7 +305,14 @@
     "href": "posts/independence-workdays.html",
     "title": "Independence Weekdays",
     "section": "",
-    "text": "This is my eighth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+    "text": "holiday <- read.csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-07-06/holidays.csv\")"
+  },
+  {
+    "objectID": "posts/independence-workdays.html#tidy-tuesday",
+    "href": "posts/independence-workdays.html#tidy-tuesday",
+    "title": "Independence Weekdays",
+    "section": "Tidy Tuesday",
+    "text": "Tidy Tuesday\nThis is my eighth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
   },
   {
     "objectID": "posts/independence-workdays.html#independence-days",
@@ -270,7 +340,14 @@
     "href": "posts/manager-salaries.html",
     "title": "Manager Salaries",
     "section": "",
-    "text": "This is my fifth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
+    "text": "data <- tidytuesdayR::tt_load(\"2021-05-18\")"
+  },
+  {
+    "objectID": "posts/manager-salaries.html#tidy-tuesday",
+    "href": "posts/manager-salaries.html#tidy-tuesday",
+    "title": "Manager Salaries",
+    "section": "Tidy Tuesday",
+    "text": "Tidy Tuesday\nThis is my fifth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.\nFor more information, visit the TidyTuesday homepage, check out their GitHub repository and follow the R4DS Learning Community on Twitter.\nThe purpose of these posts is mainly for exercising purposes. Thus, the provided graphs are not necessarily designed to provide the greatest possible insights. However, I always provide the R code for interested people at the page bottom."
   },
   {
     "objectID": "posts/manager-salaries.html#ask-a-manager-survey",
@@ -333,6 +410,6 @@
     "href": "rprojects.html",
     "title": "R Projects",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\nDevelopment of Chinook Salmon and Yellow Perch populations in the Great Lakes\n\n\n\n\n\n\n\n\n\nJun 8, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 18, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 4, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 27, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 21, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAug 30, 2022\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\nDevelopment of Chinook Salmon and Yellow Perch populations in the Great Lakes\n\n\n\n\n\n\n\n\n\nJun 8, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 25, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 18, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMay 4, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 27, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 21, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 13, 2021\n\n\nJulian Granna\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApr 6, 2021\n\n\nJulian Granna\n\n\n\n\n\n\nNo matching items"
   }
 ]

@@ -205,6 +205,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<div class="cell" data-hash="ceo-departures_cache/html/setup_b5fbc454370640d7e52ba3558d702cd0">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">"2021-04-27"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="tidy-tuesday" class="level2">
 <h2 class="anchored" data-anchor-id="tidy-tuesday">Tidy Tuesday</h2>
 <p>This is my fourth contribution to TidyTuesday, which is ‘a weekly podcast and community activity brought to you by the R4DS Online Learning Community’. Their goal is to help R learners learn in real-world contexts.</p>
@@ -220,11 +223,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are several possibilities to track diversity in the CEOs of S&amp;P 1500 firms. Again, the aim of this post is not to provide scientifically valid analyses, but rather to show the possibilities of <code>ggplot</code> and other available R packages and give a short (descriptive) overview over the data.</p>
 <p>The first thing that struck me when looking at the data was that the top 7 occuring first names of departed CEOs account for close to 30% of the CEOs:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(aceos<span class="sc">$</span>fnames[aceos<span class="sc">$</span>fnames <span class="sc">%in%</span> top_names]) <span class="sc">/</span> <span class="fu">nrow</span>(aceos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(aceos<span class="sc">$</span>fnames[aceos<span class="sc">$</span>fnames <span class="sc">%in%</span> top_names]) <span class="sc">/</span> <span class="fu">nrow</span>(aceos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.2856838</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>top_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>top_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Thomas"  "William" "Robert"  "James"   "Michael" "David"   "John"   </code></pre>
 </div>
@@ -233,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To emphasize the importance of just a few names for the group of S&amp;P 1500 (departed) CEOs, I decided to make a graph using <code>ggbump</code> indicating a “race” between the 5 most occuring names. The following graph thereby regards the cumulated number of names starting from 2010. I chose 2010 to 2019 as a time window simply for visualization reasons, which is also the case for the number of regarded names:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="ceo-departures_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="1152"></p>
+<p><img src="ceo-departures_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="1152"></p>
 </div>
 </div>
 <section id="evolution-of-diversity-over-time" class="level3">
@@ -243,13 +246,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Although it is obvious that this methodology is flawed in this context, I hoped to maybe gain some interesting insights by simply tracking the Gini coefficient over time:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="ceo-departures_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="1152"></p>
+<p><img src="ceo-departures_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="1152"></p>
 </div>
 </div>
 <p>But it turns out that the index is instead driven by the total number of names of departed CEOs:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="ceo-departures_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="1152"></p>
+<p><img src="ceo-departures_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="1152"></p>
 </div>
 </div>
 <p>Thus, one would need more sophisticated measures to track the evolution of diversity in the S&amp;P 1500. I believe that there would be room for improvement regarding the use of the Gini coefficient, but I choose to discontinue my analysis at this point due to time constrainment.</p>
