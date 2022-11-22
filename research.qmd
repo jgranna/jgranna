@@ -4,7 +4,10 @@ title: "Research"
 
 ## Publications and Conferences
 
--   Granna, Brunauer, Lang, 2022. Proposing a global model to overcome the bias-variance tradeoff in the context of hedonic house price models. *Working Papers in Economics and Statistics*. [Link](https://econpapers.repec.org/paper/innwpaper/2022-12.htm)
+-   Granna, Lang, 2023. Automated Variable Selection on German Real Estate Data\
+    Using Structured Additive Distributional Regression. *Workshop: Residential Housing Markets: Connecting Housing Researchers in Austria.* [Abstract](https://github.com/jgranna/jgranna.github.io/raw/main/posts/data/bamlss_abstract.pdf)
+
+-   Granna, Brunauer, Lang, 2022. Proposing a global model to manage the bias-variance tradeoff in the context of hedonic house price models. *Working Papers in Economics and Statistics*. [Link](https://econpapers.repec.org/paper/innwpaper/2022-12.htm)
 
 -   Granna, Brunauer, Lang, 2022. Proposing a global model to overcome the bias-variance tradeoff in the context of hedonic house price models. [*ERES Conference 2022*](https://2022.eres.org/i)*, Milano, Italy.*
 
@@ -18,9 +21,11 @@ title: "Research"
 
 ## (Co-)Advising and contributions to theses
 
+-   Armstrong, 2022. Explorations in Generalized Additive and Distributional Regression Modeling in the Bavarian Housing Market Context. *Master thesis.* [Link](https://digital.obvsg.at/urn/urn:nbn:at:at-ubi:1-116998)
+
 -   Loos, 2022. Modellierung von Kaufpreisen von Wohnungen in Sachsen in Abhängigkeit von Charakteristika und Lagevariablen. *Bachelor thesis.*
 
--   Wetscher, 2021. [Cluster analysis of Berlin rental prices](https://diglib.uibk.ac.at/ulbtirolhslimit/content/titleinfo/5848318). Master thesis.
+-   Wetscher, 2021. Cluster analysis of Berlin rental prices. *Master thesis.* [Link](https://diglib.uibk.ac.at/ulbtirolhslimit/content/titleinfo/5848318)
 
 ## Talks, Research Stays & Workshops
 
