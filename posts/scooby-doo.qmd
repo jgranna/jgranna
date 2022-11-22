@@ -44,7 +44,7 @@ scooby <- data$scoobydoo
 
 ## Scooby Doo Episodes
 
-This week's data comes from [Kaggle](https://www.kaggle.com/williamschooleman/scoobydoo-complete) and was aggregated by [plummye](https://www.kaggle.com/williamschooleman). It contains the dates of countries when they declared independence.
+This week's data comes from [Kaggle](https://www.kaggle.com/williamschooleman/scoobydoo-complete) and was aggregated by [plummye](https://www.kaggle.com/williamschooleman). It contains every Scooby-Doo episode and the movies along with various other variables.
 
 ### Word Cloud for Episode Titles
 
