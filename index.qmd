@@ -4,9 +4,6 @@ about:
   template: jolla
   image: avatar.jpg
   links: 
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com/jugRanna
     - icon: github
       text: github
       href: https://github.com/jgranna
