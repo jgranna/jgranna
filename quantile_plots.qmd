@@ -1,0 +1,9 @@
+---
+title: "Quantile plots"
+---
+
+## Cluster-Specific Effect Plots
+
+For each cluster, the animated graph shows the $2.5\%$, $5\%$, $25\%$, $50\%$, $75\%$, $95\%$, and $97.5\%$ quantiles.  
+
+![](posts/_images/effect_quantiles.gif)

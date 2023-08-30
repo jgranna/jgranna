@@ -132,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <a class="navbar-brand" href="../index.html">
-    <img src="../icon.png" alt="">
+    <img src="../icon2.png" alt="">
     <span class="navbar-title">Julian Granna</span>
   </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -235,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>Loading required package: nlme</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>This is mgcv 1.8-40. For overview type 'help("mgcv-package")'.</code></pre>
+<pre><code>This is mgcv 1.8-42. For overview type 'help("mgcv-package")'.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -389,30 +389,30 @@ AICc 50997.60 logPost -25578.0 logLik -25467.7 edf 30.967 eps 0.0125 iteration  
 AICc 50997.53 logPost -25578.1 logLik -25467.7 edf 30.988 eps 0.0008 iteration   4
 AICc 50997.52 logPost -25578.1 logLik -25467.7 edf 30.990 eps 0.0000 iteration   5
 AICc 50997.52 logPost -25578.1 logLik -25467.7 edf 30.990 eps 0.0000 iteration   5
-elapsed time:  1.08sec
+elapsed time:  1.05sec
 Starting the sampler...
 
-|                    |   0% 23.32sec
-|*                   |   5% 21.66sec  1.14sec
-|**                  |  10% 19.95sec  2.22sec
-|***                 |  15% 19.33sec  3.41sec
-|****                |  20% 18.83sec  4.71sec
-|*****               |  25% 18.64sec  6.21sec
-|******              |  30% 17.70sec  7.59sec
-|*******             |  35% 16.91sec  9.11sec
-|********            |  40% 15.84sec 10.56sec
-|*********           |  45% 14.95sec 12.23sec
-|**********          |  50% 13.88sec 13.88sec
-|***********         |  55% 12.60sec 15.39sec
-|************        |  60% 11.26sec 16.88sec
-|*************       |  65%  9.99sec 18.55sec
-|**************      |  70%  8.61sec 20.09sec
-|***************     |  75%  7.26sec 21.78sec
-|****************    |  80%  5.85sec 23.38sec
-|*****************   |  85%  4.42sec 25.04sec
-|******************  |  90%  2.97sec 26.70sec
-|******************* |  95%  1.54sec 29.35sec
-|********************| 100%  0.00sec 31.30sec</code></pre>
+|                    |   0% 23.56sec
+|*                   |   5% 18.47sec  0.97sec
+|**                  |  10% 17.76sec  1.97sec
+|***                 |  15% 15.98sec  2.82sec
+|****                |  20% 15.18sec  3.79sec
+|*****               |  25% 14.49sec  4.83sec
+|******              |  30% 13.69sec  5.87sec
+|*******             |  35% 13.09sec  7.05sec
+|********            |  40% 12.13sec  8.09sec
+|*********           |  45% 11.18sec  9.15sec
+|**********          |  50% 10.22sec 10.22sec
+|***********         |  55%  9.24sec 11.29sec
+|************        |  60%  8.34sec 12.51sec
+|*************       |  65%  7.32sec 13.59sec
+|**************      |  70%  6.29sec 14.69sec
+|***************     |  75%  5.26sec 15.79sec
+|****************    |  80%  4.23sec 16.91sec
+|*****************   |  85%  3.21sec 18.16sec
+|******************  |  90%  2.14sec 19.29sec
+|******************* |  95%  1.07sec 20.41sec
+|********************| 100%  0.00sec 21.54sec</code></pre>
 </div>
 </div>
 <p>A first glance at the model:</p>
@@ -466,48 +466,52 @@ Starting the sampler...
 <span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">2</span>, <span class="st">"cm"</span>)</span>
 <span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">35</span>, <span class="dv">315</span>)) <span class="sc">+</span></span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">30</span>, <span class="dv">30</span>))</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">30</span>, <span class="dv">30</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
+ℹ Please use the `linewidth` argument instead.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="lego-sets_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get predictions for sigma</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>p.sigma <span class="ot">&lt;-</span> <span class="fu">predict</span>(m, <span class="at">model =</span> <span class="st">"sigma"</span>, <span class="at">type =</span><span class="st">"parameter"</span>, <span class="at">FUN =</span> <span class="cf">function</span>(x) {x})</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>p.final.sigma <span class="ot">&lt;-</span> <span class="fu">predict</span>(m, <span class="at">model =</span> <span class="st">"sigma"</span>, <span class="at">type =</span> <span class="st">"parameter"</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>p.final.sigma <span class="ot">&lt;-</span> <span class="fu">exp</span>(p.final.sigma)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># transformation of sigma</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>p.sigma <span class="ot">&lt;-</span> <span class="fu">lapply</span>(smpl, <span class="cf">function</span>(x) <span class="fu">exp</span>(p.sigma[[x]]))</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># convert into tidy format for ggplot</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plot.tab.sigma <span class="ot">&lt;-</span> <span class="fu">do.call</span>(cbind, p.sigma)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plot.tab.sigma <span class="ot">&lt;-</span> <span class="fu">cbind</span>(lego[<span class="fu">order</span>(lego<span class="sc">$</span>year), ]<span class="sc">$</span>year, plot.tab.sigma)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plot.tab.sigma <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(plot.tab.sigma)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>plot.tab.sigma <span class="ot">&lt;-</span> plot.tab.sigma <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(X2<span class="sc">:</span>X101, <span class="at">values_to =</span> <span class="st">"predictions"</span>)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mu</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">subset</span>(plot.tab.sigma, name <span class="sc">%in%</span> <span class="fu">paste0</span>(<span class="st">"X"</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">101</span>)), <span class="fu">aes</span>(<span class="at">x =</span> X1, <span class="at">y =</span> predictions, <span class="at">group =</span> name)) <span class="sc">+</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1949</span>, <span class="fu">seq</span>(<span class="dv">1960</span>, <span class="dv">2020</span>, <span class="dv">20</span>))) <span class="sc">+</span></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">"green"</span>, <span class="fl">0.14</span>)) <span class="sc">+</span></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"year"</span>, <span class="at">y =</span> <span class="st">"sigma"</span>) <span class="sc">+</span></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="fu">alpha</span>(<span class="st">"white"</span>, <span class="fl">0.5</span>), <span class="at">size =</span> <span class="fl">0.4</span>),</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="fu">alpha</span>(<span class="st">"white"</span>, <span class="fl">0.8</span>), <span class="at">size =</span> <span class="fl">0.8</span>),</span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>, <span class="at">size =</span> <span class="dv">18</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)),</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">family =</span> <span class="st">"kalam"</span>, <span class="at">size =</span> <span class="dv">18</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">0</span>)),</span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>),</span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">2</span>, <span class="st">"cm"</span>)</span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">5.1</span>)) <span class="sc">+</span></span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">8</span>, <span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">8</span>))</span>
-<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>p3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get predictions for sigma</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>p.sigma <span class="ot">&lt;-</span> <span class="fu">predict</span>(m, <span class="at">model =</span> <span class="st">"sigma"</span>, <span class="at">type =</span><span class="st">"parameter"</span>, <span class="at">FUN =</span> <span class="cf">function</span>(x) {x})</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>p.final.sigma <span class="ot">&lt;-</span> <span class="fu">predict</span>(m, <span class="at">model =</span> <span class="st">"sigma"</span>, <span class="at">type =</span> <span class="st">"parameter"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>p.final.sigma <span class="ot">&lt;-</span> <span class="fu">exp</span>(p.final.sigma)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># transformation of sigma</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>p.sigma <span class="ot">&lt;-</span> <span class="fu">lapply</span>(smpl, <span class="cf">function</span>(x) <span class="fu">exp</span>(p.sigma[[x]]))</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># convert into tidy format for ggplot</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>plot.tab.sigma <span class="ot">&lt;-</span> <span class="fu">do.call</span>(cbind, p.sigma)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>plot.tab.sigma <span class="ot">&lt;-</span> <span class="fu">cbind</span>(lego[<span class="fu">order</span>(lego<span class="sc">$</span>year), ]<span class="sc">$</span>year, plot.tab.sigma)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>plot.tab.sigma <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(plot.tab.sigma)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>plot.tab.sigma <span class="ot">&lt;-</span> plot.tab.sigma <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(X2<span class="sc">:</span>X101, <span class="at">values_to =</span> <span class="st">"predictions"</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mu</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">subset</span>(plot.tab.sigma, name <span class="sc">%in%</span> <span class="fu">paste0</span>(<span class="st">"X"</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">101</span>)), <span class="fu">aes</span>(<span class="at">x =</span> X1, <span class="at">y =</span> predictions, <span class="at">group =</span> name)) <span class="sc">+</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1949</span>, <span class="fu">seq</span>(<span class="dv">1960</span>, <span class="dv">2020</span>, <span class="dv">20</span>))) <span class="sc">+</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">col =</span> <span class="fu">alpha</span>(<span class="st">"green"</span>, <span class="fl">0.14</span>)) <span class="sc">+</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"year"</span>, <span class="at">y =</span> <span class="st">"sigma"</span>) <span class="sc">+</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="fu">alpha</span>(<span class="st">"white"</span>, <span class="fl">0.5</span>), <span class="at">size =</span> <span class="fl">0.4</span>),</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="fu">alpha</span>(<span class="st">"white"</span>, <span class="fl">0.8</span>), <span class="at">size =</span> <span class="fl">0.8</span>),</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>, <span class="at">size =</span> <span class="dv">18</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)),</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">family =</span> <span class="st">"kalam"</span>, <span class="at">size =</span> <span class="dv">18</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">0</span>)),</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>),</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">2</span>, <span class="st">"cm"</span>)</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">5.1</span>)) <span class="sc">+</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">8</span>, <span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">8</span>))</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>p3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="lego-sets_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -517,30 +521,30 @@ Starting the sampler...
 <h3 class="anchored" data-anchor-id="final-plot">Final Plot</h3>
 <p>Now, I add everything together with the <code>patchwork</code> package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"kalam"</span>)))</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext_auto</span>()</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>logo <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span>                      <span class="co"># Draw ggplot2 plot with text only</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_rect</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> <span class="dv">0</span>, <span class="at">xmax =</span> <span class="fl">1.25</span>, <span class="at">ymin =</span> <span class="fl">0.8</span>, <span class="at">ymax =</span> <span class="fl">1.3</span>), <span class="at">fill =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_shadowtext</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="st">"LEGO"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>), <span class="at">bg.color =</span> <span class="st">"yellow"</span>, <span class="at">bg.r =</span> <span class="fl">0.18</span>, <span class="at">size =</span> <span class="dv">22</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_shadowtext</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="st">"LEGO"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>), <span class="at">bg.color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">22</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.43</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="st">"Sets"</span>), <span class="at">family =</span> <span class="st">"kalam"</span>, <span class="at">size =</span> <span class="dv">24</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span> </span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">0.75</span>, <span class="at">y =</span> <span class="fl">0.4</span>, <span class="at">label =</span> <span class="st">"Graphs show the distribution of the number of parts  in LEGO sets. </span><span class="sc">\n</span><span class="st">The panel on the right shows the corresponding density plot for three different </span><span class="sc">\n</span><span class="st">time periods.</span><span class="sc">\n</span><span class="st">The bottom two panels refer to a Bayesian distributional regression model, </span><span class="sc">\n</span><span class="st">where both log(mu) and sigma of a normal distribution are modeled using </span><span class="sc">\n</span><span class="st">penalized splines within the bamlss package. Apparently, LEGO has adjusted its </span><span class="sc">\n</span><span class="st">strategy to not only increase the mean number of parts of each set, but also its </span><span class="sc">\n</span><span class="st">variance meaning that nowadays, both, sets containing only few parts, but </span><span class="sc">\n</span><span class="st">also sets containing a large number of parts, are available to customers. "</span>), <span class="at">size =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>, <span class="at">lineheight =</span> <span class="fl">0.6</span>, <span class="at">hjust =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">1.15</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">2</span>)) <span class="sc">+</span> </span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>)) <span class="sc">+</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">0</span>))</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>logo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"kalam"</span>)))</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext_auto</span>()</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>logo <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span>                      <span class="co"># Draw ggplot2 plot with text only</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_rect</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> <span class="dv">0</span>, <span class="at">xmax =</span> <span class="fl">1.25</span>, <span class="at">ymin =</span> <span class="fl">0.8</span>, <span class="at">ymax =</span> <span class="fl">1.3</span>), <span class="at">fill =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_shadowtext</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="st">"LEGO"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>), <span class="at">bg.color =</span> <span class="st">"yellow"</span>, <span class="at">bg.r =</span> <span class="fl">0.18</span>, <span class="at">size =</span> <span class="dv">22</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_shadowtext</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="st">"LEGO"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>), <span class="at">bg.color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">22</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.43</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">label =</span> <span class="st">"Sets"</span>), <span class="at">family =</span> <span class="st">"kalam"</span>, <span class="at">size =</span> <span class="dv">24</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span> </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">0.75</span>, <span class="at">y =</span> <span class="fl">0.4</span>, <span class="at">label =</span> <span class="st">"Graphs show the distribution of the number of parts  in LEGO sets. </span><span class="sc">\n</span><span class="st">The panel on the right shows the corresponding density plot for three different </span><span class="sc">\n</span><span class="st">time periods.</span><span class="sc">\n</span><span class="st">The bottom two panels refer to a Bayesian distributional regression model, </span><span class="sc">\n</span><span class="st">where both log(mu) and sigma of a normal distribution are modeled using </span><span class="sc">\n</span><span class="st">penalized splines within the bamlss package. Apparently, LEGO has adjusted its </span><span class="sc">\n</span><span class="st">strategy to not only increase the mean number of parts of each set, but also its </span><span class="sc">\n</span><span class="st">variance meaning that nowadays, both, sets containing only few parts, but </span><span class="sc">\n</span><span class="st">also sets containing a large number of parts, are available to customers. "</span>), <span class="at">size =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">family =</span> <span class="st">"kalam"</span>, <span class="at">lineheight =</span> <span class="fl">0.6</span>, <span class="at">hjust =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">1.15</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">2</span>)) <span class="sc">+</span> </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">0</span>))</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>logo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="lego-sets_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Now, I can use the <code>patchwork</code> package to plug all plots together</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(logo <span class="sc">+</span> plot1) <span class="sc">/</span> (p2 <span class="sc">+</span> p3) <span class="sc">&amp;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"black"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(logo <span class="sc">+</span> plot1) <span class="sc">/</span> (p2 <span class="sc">+</span> p3) <span class="sc">&amp;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"black"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="lego-sets.png" class="img-fluid"></p>
 <hr>
