@@ -100,7 +100,9 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-generating-process" id="toc-data-generating-process" class="nav-link active" data-scroll-target="#data-generating-process">Data Generating Process</a></li>
+  <li><a href="#modeling-multiplicative-interaction-effects-in-gaussian-structured-additive-regression-models" id="toc-modeling-multiplicative-interaction-effects-in-gaussian-structured-additive-regression-models" class="nav-link active" data-scroll-target="#modeling-multiplicative-interaction-effects-in-gaussian-structured-additive-regression-models">Modeling multiplicative interaction effects in Gaussian structured additive regression models</a>
+  <ul class="collapse">
+  <li><a href="#data-generating-process" id="toc-data-generating-process" class="nav-link" data-scroll-target="#data-generating-process">Data Generating Process</a></li>
   <li><a href="#repititions" id="toc-repititions" class="nav-link" data-scroll-target="#repititions">250 repititions</a>
   <ul class="collapse">
   <li><a href="#estimated-effect-hatf_1t" id="toc-estimated-effect-hatf_1t" class="nav-link" data-scroll-target="#estimated-effect-hatf_1t">Estimated effect <span class="math inline">\(\hat{f}_1(t)\)</span></a></li>
@@ -108,6 +110,7 @@ ul.task-list{list-style: none;}
   <li><a href="#estimated-effect-hatf_3z" id="toc-estimated-effect-hatf_3z" class="nav-link" data-scroll-target="#estimated-effect-hatf_3z">Estimated effect <span class="math inline">\(\hat{f}_3(z)\)</span></a></li>
   <li><a href="#estimated-effect-postcode" id="toc-estimated-effect-postcode" class="nav-link" data-scroll-target="#estimated-effect-postcode">Estimated effect postcode</a></li>
   <li><a href="#estimated-fxexpcdot" id="toc-estimated-fxexpcdot" class="nav-link" data-scroll-target="#estimated-fxexpcdot">Estimated <span class="math inline">\(f(x)exp(\cdot)\)</span></a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -131,13 +134,22 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<section id="modeling-multiplicative-interaction-effects-in-gaussian-structured-additive-regression-models" class="level1">
+<h1>Modeling multiplicative interaction effects in Gaussian structured additive regression models</h1>
+<p>by</p>
+<ul>
+<li><p>Philipp Aschersleben</p></li>
+<li><p>Julian Granna</p></li>
+<li><p>Thomas Kneib</p></li>
+<li><p>Stefan Lang</p></li>
+<li><p>Nikolaus Umlauf and</p></li>
+<li><p>Winfried Steiner</p></li>
+</ul>
+<p>This page contains accompanying online materials to the paper.</p>
 <section id="data-generating-process" class="level2">
 <h2 class="anchored" data-anchor-id="data-generating-process">Data Generating Process</h2>
-<p>We carry out a simulation study for a Gaussian distribution, where we link the <span class="math inline">\(\mu\)</span>-parameter to the predictor</p>
-<p><span class="math display">\[
-\eta = f_1(t) + f_2(x) \, exp\left(\gamma_{0i} + f_3(z)\right) + f_4(lon,\, lat)
-\]</span></p>
-<p>and the link function is identity. We add noise that is normally distributed with mean 0 and standard deviation equal to <span class="math inline">\(\eta / 2\)</span>. <span class="math inline">\(f_1(t)=cos(2\pi(t-1)/100)\)</span> with <span class="math inline">\(t\)</span> being a sequence from 1 through 100. <span class="math inline">\(f_2(x) = sin(x)\)</span>, where <span class="math inline">\(x\)</span> is uniformly distributed on <span class="math inline">\([\pi /2, \, 3\pi /2]\)</span>. <span class="math inline">\(f_3(z)=0.7 \, cos(2\pi(z-1)/100)\)</span>, where <span class="math inline">\(z\)</span> is uniformly distributed on the interval <span class="math inline">\([1,\, 100]\)</span>. <span class="math inline">\(\gamma_{0i}\)</span> is a normally distributed cluster-specific random effect for 3-digit postcode regions in Bavaria, Germany, with mean <span class="math inline">\(0\)</span> and standard deviation <span class="math inline">\(0.49\)</span>. Finally, <span class="math inline">\(f_4(lon,\, lat)=sin(2lon+lat)\)</span>, where <span class="math inline">\(lon\)</span> and <span class="math inline">\(lat\)</span> correspond to the longitude and latitude coordinates of the centroids of the 3-digit postcode regions.</p>
+<p>We carry out a simulation study for a Gaussian distribution, where we link the <span class="math inline">\(\mu\)</span>-parameter to the predictor $$ = f_1(t) + f_2(x) , exp(_{0i} + f_3(z)) + f_4(lon,, lat)</p>
+<p>$$ and the link function is identity. We add noise that is normally distributed with mean 0 and standard deviation equal to <span class="math inline">\(\eta / 2\)</span>. <span class="math inline">\(f_1(t)=cos(2\pi(t-1)/100)\)</span> with <span class="math inline">\(t\)</span> being a sequence from 1 through 100. <span class="math inline">\(f_2(x) = sin(x)\)</span>, where <span class="math inline">\(x\)</span> is uniformly distributed on <span class="math inline">\([\pi /2, \, 3\pi /2]\)</span>. <span class="math inline">\(f_3(z)=0.7 \, cos(2\pi(z-1)/100)\)</span>, where <span class="math inline">\(z\)</span> is uniformly distributed on the interval <span class="math inline">\([1,\, 100]\)</span>. <span class="math inline">\(\gamma_{0i}\)</span> is a normally distributed cluster-specific random effect for 3-digit postcode regions in Bavaria, Germany, with mean <span class="math inline">\(0\)</span> and standard deviation <span class="math inline">\(0.49\)</span>. Finally, <span class="math inline">\(f_4(lon,\, lat)=sin(2lon+lat)\)</span>, where <span class="math inline">\(lon\)</span> and <span class="math inline">\(lat\)</span> correspond to the longitude and latitude coordinates of the centroids of the 3-digit postcode regions.</p>
 </section>
 <section id="repititions" class="level2">
 <h2 class="anchored" data-anchor-id="repititions">250 repititions</h2>
@@ -148,7 +160,8 @@ ul.task-list{list-style: none;}
 </section>
 <section id="estimated-effect-hatf_2x" class="level3">
 <h3 class="anchored" data-anchor-id="estimated-effect-hatf_2x">Estimated effect <span class="math inline">\(\hat{f}_2(x)\)</span></h3>
-<p><img src="posts/_images/fx_sr2.gif" class="img-fluid"></p>
+<p><img src="posts/_images/fx_sr2.gif" class="img-fluid"> ### Estimated effect <span class="math inline">\(\gamma_{0i}\)</span></p>
+<p><img src="posts/_images/gamma0i_sr2.gif" class="img-fluid"></p>
 </section>
 <section id="estimated-effect-hatf_3z" class="level3">
 <h3 class="anchored" data-anchor-id="estimated-effect-hatf_3z">Estimated effect <span class="math inline">\(\hat{f}_3(z)\)</span></h3>
@@ -163,6 +176,7 @@ ul.task-list{list-style: none;}
 <p><img src="posts/_images/scaled_sr2.gif" class="img-fluid"></p>
 
 
+</section>
 </section>
 </section>
 
